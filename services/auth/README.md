@@ -47,3 +47,44 @@ curl --header "Content-Type: application/json" \
 ```
 
 This call returns a access-token and a refresh token for this session.
+Example Response:
+```json
+{
+        "access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOiIyMDIwLTEwLTI1VDE1OjI4OjA2Ljk5MjE3MTA4MVoiLCJwZXJtaXNzaW9ucyI6Ilt7XCJrZXlcIjpcIlJPT1RcIixcIm1ldGFcIjpudWxsfV0iLCJ1c2VyX2lkIjoic3UifQ.GB9skCdYbnbDsA9IcMiybMRmgNlt4P_F-inUfuvaXZk","refresh-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOiIyMDIwLTExLTAxVDE1OjEzOjA2Ljk5MjE3NDA2M1oiLCJ1c2VyX2lkIjoic3UifQ.ugCGoLxSr2XoJxCTedRVM1mFsT-LZgRh-uyEwTraOsQ"
+}
+```
+
+#### REFRESH TOKEN
+This call generates a new access and refresh token for the session with given refresh token.
+```
+curl --header "Content-Type: application/json" \
+        --request POST \
+        --data '{"refresh-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOiIyMDIwLTExLTAxVDE1OjEzOjA2Ljk5MjE3NDA2M1oiLCJ1c2VyX2lkIjoic3UifQ.ugCGoLxSr2XoJxCTedRVM1mFsT-LZgRh-uyEwTraOsQ"}' \ 
+        http://localhost:7004/refresh
+```
+Example Response:
+```json
+{
+        "access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOiIyMDIwLTEwLTI1VDE1OjMyOjIxLjMzODgyMjIxNloiLCJwZXJtaXNzaW9ucyI6Ilt7XCJrZXlcIjpcIlJPT1RcIixcIm1ldGFcIjpudWxsfV0iLCJ1c2VyX2lkIjoic3UifQ.N7dloh8YAvyBvEck36Q7moMH1MWNU8iW11A3xNKhLto","refresh-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOiIyMDIwLTExLTAxVDE1OjE3OjIxLjMzODgyMzkzOFoiLCJ1c2VyX2lkIjoic3UifQ.03r_7ImXxLGElpRVpgHCO4jtErKl63SJaF7CEf0yka8"
+}
+```
+
+#### DECODE TOKEN
+This call is used to verify and decode a given access token.
+
+```
+curl --header "Content-Type: application/json" \
+        --request POST \ 
+        --data '{"access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOiIyMDIwLTEwLTI1VDE1OjMyOjIxLjMzODgyMjIxNloiLCJwZXJtaXNzaW9ucyI6Ilt7XCJrZXlcIjpcIlJPT1RcIixcIm1ldGFcIjpudWxsfV0iLCJ1c2VyX2lkIjoic3UifQ.N7dloh8YAvyBvEck36Q7moMH1MWNU8iW11A3xNKhLto"}' \
+        http://localhost:7004/decode
+```
+Example Response:
+```json
+{
+        "user-id":"aUserId",
+        "permissions":[
+                {"key":"ROOT","meta":null}
+        ],
+        "expires":"2020-10-25T15:32:21.338822216Z"
+}
+```

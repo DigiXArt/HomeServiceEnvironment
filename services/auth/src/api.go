@@ -34,3 +34,49 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"net/http"
+	"os"
+	"time"
+
+	"github.com/dgrijalva/jwt-go"
+)
+
+// APIInterface defines the interface of the RESTful API
+type APIInterface interface {
+	Initialize(storage StorageInterface, tokenbuilder TokenBuilderInterface)
+	UserLogin(w http.ResponseWriter, r *http.Request)
+	RefreshToken(w http.ResponseWriter, r *http.Request)
+	DecodeToken(w http.ResponseWriter, r *http.Request)
+	ServiceLogin(w http.ResponseWriter, r *http.Request)
+}
+
+// API implements APIInterface
+type API struct {
+	Storage      StorageInterface
+	Tokenbuilder TokenBuilderInterface
+}
+
+// Initialize initializes the API by setting the active storage and tokenbuilder
+func (a *API) Initialize(storage StorageInterface, tokenbuilder TokenBuilderInterface) {
+	a.Storage = storage
+	a.Tokenbuilder = tokenbuilder
+}
+
+// parseRequestPayload parses the given json data of the request's io.ReadCloser
+func parseRequestPayload(rc io.ReadCloser, dst interface{}) error {
+	err := json.NewDecoder(rc).Decode(dst)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// UserLogin handles user login api requests
+func (a *API) UserLogin(w http.ResponseWriter, r *http.Request) {
+	loginMsg := &UserLoginType{}
+	err := parseRequestPayload(r.Body, loginMsg)
+	if err != nil {
+		RaiseError(w, "Invalid request body. Invalid Json format", http.StatusBadRequest, ErrorCodeInvalidRequestBody)
+		return
+	}

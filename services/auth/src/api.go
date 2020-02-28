@@ -80,3 +80,47 @@ func (a *API) UserLogin(w http.ResponseWriter, r *http.Request) {
 		RaiseError(w, "Invalid request body. Invalid Json format", http.StatusBadRequest, ErrorCodeInvalidRequestBody)
 		return
 	}
+
+	user, ok, err := a.Storage.GetUserByCredentials(loginMsg.Username, loginMsg.Password)
+	if err != nil {
+		RaiseError(w, err.Error(), http.StatusInternalServerError, ErrorCodeInternal)
+		return
+	}
+
+	if !ok {
+		RaiseError(w, "Login failed", http.StatusUnauthorized, ErrorCodeLoginFailed)
+		return
+	}
+
+	td, err := a.Tokenbuilder.CreateUserToken(user)
+	if err != nil {
+		RaiseError(w, err.Error(), http.StatusInternalServerError, ErrorCodeInternal)
+		return
+	}
+
+	resp := UserTokenType{
+		AccessToken:  td.AccessToken,
+		RefreshToken: td.RefreshToken,
+	}
+
+	w.Header().Add("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(resp)
+}
+
+// RefreshToken is the API Handler for token refresh requests
+func (a *API) RefreshToken(w http.ResponseWriter, r *http.Request) {
+	refreshMsg := &RefreshTokenRequestType{}
+	err := parseRequestPayload(r.Body, refreshMsg)
+	if err != nil {
+		RaiseError(w, "Invalid request body. Invalid Json format", http.StatusBadRequest, ErrorCodeInternal)
+		return
+	}
+
+	token, err := jwt.Parse(refreshMsg.RefreshToken, func(token *jwt.Token) (interface{}, error) {
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, fmt.Errorf("Unexpected signing method %v", token.Header["alg"])
+		}
+		return []byte(os.Getenv("AUTH_REFRESH_SECRET")), nil
+	})
+	if err != nil {

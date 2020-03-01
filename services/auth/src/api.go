@@ -124,3 +124,64 @@ func (a *API) RefreshToken(w http.ResponseWriter, r *http.Request) {
 		return []byte(os.Getenv("AUTH_REFRESH_SECRET")), nil
 	})
 	if err != nil {
+		RaiseError(w, err.Error(), http.StatusBadRequest, ErrorCodeUnexpectedSigningMethod)
+		return
+	}
+
+	if _, ok := token.Claims.(jwt.MapClaims); !ok && !token.Valid {
+		RaiseError(w, "Invalid Token", http.StatusBadRequest, ErrorCodeInvalidToken)
+		return
+	}
+
+	claims, ok := token.Claims.(jwt.MapClaims)
+	if !ok {
+		RaiseError(w, "Invalid token claims", http.StatusBadRequest, ErrorCodeInvalidToken)
+		return
+	}
+
+	expValue, ok := claims["exp"].(string)
+	if !ok {
+		RaiseError(w, "Missing exp", http.StatusBadRequest, ErrorCodeInvalidToken)
+		return
+	}
+
+	exp, _ := time.Parse(time.RFC3339, expValue)
+	if exp.Before(time.Now().UTC()) {
+		RaiseError(w, "Token expired", http.StatusUnauthorized, ErrorCodeTokenExpired)
+		return
+	}
+
+	userID, ok := claims["user_id"].(string)
+	if !ok {
+		RaiseError(w, "Missing user_id", http.StatusBadRequest, ErrorCodeInvalidToken)
+		return
+	}
+
+	user, err := a.Storage.GetUser(userID)
+	if err != nil {
+		RaiseError(w, err.Error(), http.StatusInternalServerError, ErrorCodeInternal)
+		return
+	}
+
+	if user == nil {
+		RaiseError(w, fmt.Sprintf("Unknown user %v", userID), http.StatusBadRequest, ErrorCodeInvalidToken)
+		return
+	}
+
+	td, err := a.Tokenbuilder.CreateUserToken(user)
+	if err != nil {
+		RaiseError(w, err.Error(), http.StatusInternalServerError, ErrorCodeInternal)
+		return
+	}
+
+	resp := &UserTokenType{
+		AccessToken:  td.AccessToken,
+		RefreshToken: td.RefreshToken,
+	}
+
+	w.Header().Add("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(resp)
+}
+
+// DecodeToken is the API handler to decode and verify access tokens

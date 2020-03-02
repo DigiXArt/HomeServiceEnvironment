@@ -185,3 +185,55 @@ func (a *API) RefreshToken(w http.ResponseWriter, r *http.Request) {
 }
 
 // DecodeToken is the API handler to decode and verify access tokens
+func (a *API) DecodeToken(w http.ResponseWriter, r *http.Request) {
+	decodeMsg := &DecodeTokenMessage{}
+	err := parseRequestPayload(r.Body, decodeMsg)
+	if err != nil {
+		RaiseError(w, "Invalid request body. Invalid json format", http.StatusBadRequest, ErrorCodeInvalidRequestBody)
+		return
+	}
+
+	token, err := jwt.Parse(decodeMsg.AccessToken, func(token *jwt.Token) (interface{}, error) {
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, fmt.Errorf("Unexpected signing method %v", token.Header["alg"])
+		}
+		return []byte(os.Getenv("AUTH_ACCESS_SECRET")), nil
+	})
+	if err != nil {
+		RaiseError(w, err.Error(), http.StatusBadRequest, ErrorCodeUnexpectedSigningMethod)
+		return
+	}
+
+	if _, ok := token.Claims.(jwt.MapClaims); !ok && !token.Valid {
+		RaiseError(w, "Invalid token", http.StatusBadRequest, ErrorCodeInvalidToken)
+		return
+	}
+
+	claims, ok := token.Claims.(jwt.MapClaims)
+	if !ok {
+		RaiseError(w, "Invalid token claims", http.StatusBadRequest, ErrorCodeInvalidToken)
+		return
+	}
+
+	expValue, ok := claims["exp"].(string)
+	if !ok {
+		RaiseError(w, "Missing exp", http.StatusBadRequest, ErrorCodeInvalidToken)
+		return
+	}
+
+	exp, _ := time.Parse(time.RFC3339, expValue)
+	if exp.Before(time.Now().UTC()) {
+		RaiseError(w, "Token expired", http.StatusBadRequest, ErrorCodeTokenExpired)
+		return
+	}
+
+	userID, ok := claims["user_id"].(string)
+	if !ok {
+		RaiseError(w, "Missing user id", http.StatusBadRequest, ErrorCodeInvalidToken)
+		return
+	}
+
+	permissionsValue, ok := claims["permissions"].(string)
+	permissions := make([]Permission, 0)
+	err = json.Unmarshal([]byte(permissionsValue), &permissions)
+	if err != nil {

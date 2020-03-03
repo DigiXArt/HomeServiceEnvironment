@@ -237,3 +237,48 @@ func (a *API) DecodeToken(w http.ResponseWriter, r *http.Request) {
 	permissions := make([]Permission, 0)
 	err = json.Unmarshal([]byte(permissionsValue), &permissions)
 	if err != nil {
+		RaiseError(w, "Missing permissions", http.StatusBadRequest, ErrorCodeInvalidToken)
+		return
+	}
+
+	decodedToken := DecodedTokenMessage{
+		UserID:      userID,
+		Permissions: permissions,
+		Expires:     exp,
+	}
+
+	w.Header().Add("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(decodedToken)
+}
+
+// ServiceLogin handles service login api requests
+func (a *API) ServiceLogin(w http.ResponseWriter, r *http.Request) {
+	loginMsg := ServiceLoginType{}
+	err := parseRequestPayload(r.Body, loginMsg)
+	if err != nil {
+		RaiseError(w, "Invalid request body. Invalid json format", http.StatusBadRequest, ErrorCodeInvalidRequestBody)
+		return
+	}
+	service, ok, err := a.Storage.GetServiceByCredentials(loginMsg.ID, loginMsg.Key)
+	if err != nil {
+		RaiseError(w, err.Error(), http.StatusInternalServerError, ErrorCodeInternal)
+		return
+	}
+
+	if !ok {
+		RaiseError(w, "Login failed", http.StatusUnauthorized, ErrorCodeLoginFailed)
+		return
+	}
+
+	td, err := a.Tokenbuilder.CreateServiceToken(service)
+	if err != nil {
+		RaiseError(w, err.Error(), http.StatusInternalServerError, ErrorCodeInternal)
+		return
+	}
+
+	resp := &ServiceTokenType{
+		AccessToken: td.AccessToken,
+	}
+
+	w.Header().Add("Content-Type", "application/json")

@@ -4,4 +4,8 @@ Defines all error types and messages of the the RESTful API.
 
 ###################################################################################
 
-MIT Lice
+MIT License
+
+Copyright (c) 2020 Bruno Hautzenberger
+
+Permission is hereby grante

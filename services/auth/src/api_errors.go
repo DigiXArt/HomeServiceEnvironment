@@ -31,4 +31,7 @@ package main
 import (
 	"encoding/json"
 	"log"
-	
+	"net/http"
+)
+
+// ErrorCode defines all possible erro

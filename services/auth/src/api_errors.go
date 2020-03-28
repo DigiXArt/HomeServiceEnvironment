@@ -37,4 +37,6 @@ import (
 // ErrorCode defines all possible errors codes of this service
 type ErrorCode int
 
-//
+// ErrorCodes
+const (
+	ErrorCodeInternal        

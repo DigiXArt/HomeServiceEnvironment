@@ -40,4 +40,5 @@ type ErrorCode int
 // ErrorCodes
 const (
 	ErrorCodeInternal                ErrorCode = 0
-	ErrorCodeLoginFa
+	ErrorCodeLoginFailed                       = 1
+	Error

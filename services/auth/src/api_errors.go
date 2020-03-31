@@ -41,4 +41,5 @@ type ErrorCode int
 const (
 	ErrorCodeInternal                ErrorCode = 0
 	ErrorCodeLoginFailed                       = 1
-	Error
+	ErrorCodeRefreshFailed                     = 2
+	ErrorCodeIDIsMi

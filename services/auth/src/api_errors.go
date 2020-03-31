@@ -42,4 +42,5 @@ const (
 	ErrorCodeInternal                ErrorCode = 0
 	ErrorCodeLoginFailed                       = 1
 	ErrorCodeRefreshFailed                     = 2
-	ErrorCodeIDIsMi
+	ErrorCodeIDIsMissing                       = 3
+	Er

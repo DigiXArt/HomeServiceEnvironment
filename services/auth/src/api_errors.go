@@ -43,4 +43,4 @@ const (
 	ErrorCodeLoginFailed                       = 1
 	ErrorCodeRefreshFailed                     = 2
 	ErrorCodeIDIsMissing                       = 3
-	Er
+	ErrorCodeInvalidRequestBody     

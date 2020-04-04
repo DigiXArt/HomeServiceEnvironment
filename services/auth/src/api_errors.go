@@ -43,4 +43,5 @@ const (
 	ErrorCodeLoginFailed                       = 1
 	ErrorCodeRefreshFailed                     = 2
 	ErrorCodeIDIsMissing                       = 3
-	ErrorCodeInvalidRequestBody     
+	ErrorCodeInvalidRequestBody                = 4
+	ErrorCodeUnexpectedSigningMethod           = 5

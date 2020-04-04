@@ -45,3 +45,4 @@ const (
 	ErrorCodeIDIsMissing                       = 3
 	ErrorCodeInvalidRequestBody                = 4
 	ErrorCodeUnexpectedSigningMethod           = 5
+	ErrorCodeInvalidToken                      

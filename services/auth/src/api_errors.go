@@ -46,4 +46,7 @@ const (
 	ErrorCodeInvalidRequestBody                = 4
 	ErrorCodeUnexpectedSigningMethod           = 5
 	ErrorCodeInvalidToken                      = 6
-	ErrorCodeTokenExpired                     
+	ErrorCodeTokenExpired                      = 7
+)
+
+// ErrorMessage holds all information

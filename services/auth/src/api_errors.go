@@ -49,4 +49,5 @@ const (
 	ErrorCodeTokenExpired                      = 7
 )
 
-// ErrorMessage holds all information
+// ErrorMessage holds all information of a certain error
+type ErrorMessage struct

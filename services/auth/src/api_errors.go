@@ -52,4 +52,5 @@ const (
 // ErrorMessage holds all information of a certain error
 type ErrorMessage struct {
 	Message    string    `json:"message"`
-	Stat
+	StatusCode int       `json:"status"`
+	Code       ErrorCode `json:"c

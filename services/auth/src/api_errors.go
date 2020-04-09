@@ -53,4 +53,7 @@ const (
 type ErrorMessage struct {
 	Message    string    `json:"message"`
 	StatusCode int       `json:"status"`
-	Code       ErrorCode `json:"c
+	Code       ErrorCode `json:"code"`
+}
+
+// RaiseError logs and return

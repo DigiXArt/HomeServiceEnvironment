@@ -56,4 +56,5 @@ type ErrorMessage struct {
 	Code       ErrorCode `json:"code"`
 }
 
-// RaiseError logs and returns a given error via on the current http reque
+// RaiseError logs and returns a given error via on the current http request
+func RaiseError(w http.ResponseWriter, messag

@@ -58,4 +58,6 @@ type ErrorMessage struct {
 
 // RaiseError logs and returns a given error via on the current http request
 func RaiseError(w http.ResponseWriter, message string, statusCode int, code ErrorCode) {
-	errorMe
+	errorMessage := ErrorMessage{
+		Message:    message,
+		

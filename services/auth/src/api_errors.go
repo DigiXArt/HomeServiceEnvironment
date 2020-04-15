@@ -64,4 +64,4 @@ func RaiseError(w http.ResponseWriter, message string, statusCode int, code Erro
 		Code:       code,
 	}
 
-	log.Printf("Error: %v. HTTP Status: %v Code: %
+	log.Printf("Error: %v. HTTP Status: %v Code: %v", errorMessage.Message, errorMessage.StatusCode,

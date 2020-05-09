@@ -1,3 +1,3 @@
 /*
 api_messages.go
-Defines all types th
+Defines all types that are either served via the API or received

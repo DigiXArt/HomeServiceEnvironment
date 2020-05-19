@@ -6,4 +6,6 @@ Defines all types that are either served via the API or received from the client
 
 MIT License
 
-Copyright (c) 2020 Bruno
+Copyright (c) 2020 Bruno Hautzenberger
+
+Permission is hereby granted

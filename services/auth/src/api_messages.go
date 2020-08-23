@@ -32,4 +32,5 @@ import (
 	"time"
 )
 
-//U
+//UserLoginType defines the API input for a user login
+type Use

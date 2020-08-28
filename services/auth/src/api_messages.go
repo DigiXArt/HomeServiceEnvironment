@@ -33,4 +33,5 @@ import (
 )
 
 //UserLoginType defines the API input for a user login
-type Use
+type UserLoginType struct {
+	Username string `j

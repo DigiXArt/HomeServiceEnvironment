@@ -38,4 +38,4 @@ type UserLoginType struct {
 	Password string `json:"password"`
 }
 
-/
+// UserTokenType defines the API response for 

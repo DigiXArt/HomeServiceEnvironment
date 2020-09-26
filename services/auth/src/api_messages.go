@@ -39,4 +39,6 @@ type UserLoginType struct {
 }
 
 // UserTokenType defines the API response for a successful user login
-type UserTokenType stru
+type UserTokenType struct {
+	AccessToken  string `json:"access-token"`
+	Refr

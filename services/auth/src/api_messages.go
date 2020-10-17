@@ -44,4 +44,5 @@ type UserTokenType struct {
 	RefreshToken string `json:"refresh-token"`
 }
 
-// RefreshTokenRequestType defines the API input for 
+// RefreshTokenRequestType defines the API input for token refresh requests
+type RefreshTokenRequestTy

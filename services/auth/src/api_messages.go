@@ -49,4 +49,5 @@ type RefreshTokenRequestType struct {
 	RefreshToken string `json:"refresh-token"`
 }
 
-// ServiceLoginType defines 
+// ServiceLoginType defines the API input for a service login
+type ServiceLoginType st

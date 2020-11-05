@@ -52,4 +52,7 @@ type RefreshTokenRequestType struct {
 // ServiceLoginType defines the API input for a service login
 type ServiceLoginType struct {
 	ID  string `json:"id"`
-	Key string `js
+	Key string `json:"key"`
+}
+
+// ServiceTokenType defines the API response for

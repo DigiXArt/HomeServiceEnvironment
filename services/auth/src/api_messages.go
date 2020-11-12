@@ -56,4 +56,8 @@ type ServiceLoginType struct {
 }
 
 // ServiceTokenType defines the API response for a successful service login
-type ServiceTokenType stru
+type ServiceTokenType struct {
+	AccessToken string `json:"access-token"`
+}
+
+// DecodeTo

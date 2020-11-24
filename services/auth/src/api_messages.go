@@ -61,4 +61,5 @@ type ServiceTokenType struct {
 }
 
 // DecodeTokenMessage defines the API Input for TokensToDecode
-ty
+type DecodeTokenMessage struct {
+	AccessToken str

@@ -65,4 +65,5 @@ type DecodeTokenMessage struct {
 	AccessToken string `json:"access-token"`
 }
 
-//DecodedTokenMessage defines the API response for a successful decoded
+//DecodedTokenMessage defines the API response for a successful decoded token
+type DecodedTokenMessage

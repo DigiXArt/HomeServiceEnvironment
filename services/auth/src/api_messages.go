@@ -72,4 +72,4 @@ type DecodedTokenMessage struct {
 	Expires     time.Time    `json:"expires"`
 }
 
-/
+//ErrorMessageType defines the API message f

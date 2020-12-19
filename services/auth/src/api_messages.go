@@ -68,4 +68,8 @@ type DecodeTokenMessage struct {
 //DecodedTokenMessage defines the API response for a successful decoded token
 type DecodedTokenMessage struct {
 	UserID      string       `json:"user-id"`
-	Permissions []Permission `json:"permissions
+	Permissions []Permission `json:"permissions"`
+	Expires     time.Time    `json:"expires"`
+}
+
+/

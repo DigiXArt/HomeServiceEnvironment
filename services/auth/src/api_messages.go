@@ -74,4 +74,5 @@ type DecodedTokenMessage struct {
 
 //ErrorMessageType defines the API message for errors
 type ErrorMessageType struct {
-	Error in
+	Error interface{} `json:"error"`
+}

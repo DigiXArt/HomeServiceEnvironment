@@ -1,4 +1,4 @@
 /*
 AUTH
 
-Auth is a ser
+Auth is a service that can be used to authenticate user and re

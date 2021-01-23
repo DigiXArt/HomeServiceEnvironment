@@ -9,4 +9,7 @@ of this user. The refresh token can be used to refresh a user'S authentication.
 Again, do not use this in production, but it is a nice example on how to
 implment JWT authentication and a refresh mechanism.
 
-#############################################################################
+###################################################################################
+
+main.go
+This is the main entrypoint of 

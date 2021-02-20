@@ -16,3 +16,7 @@ This is the main entrypoint of the service. It starts the service and
 routes all API methods.
 
 ###################################################################################
+
+MIT License
+
+Copyright (c) 2020 Bruno Hautze

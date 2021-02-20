@@ -13,4 +13,6 @@ implment JWT authentication and a refresh mechanism.
 
 main.go
 This is the main entrypoint of the service. It starts the service and
-r
+routes all API methods.
+
+####################################

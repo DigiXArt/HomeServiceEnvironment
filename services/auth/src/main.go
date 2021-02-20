@@ -15,4 +15,4 @@ main.go
 This is the main entrypoint of the service. It starts the service and
 routes all API methods.
 
-####################################
+###################################################################################

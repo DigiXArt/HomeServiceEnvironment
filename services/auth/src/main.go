@@ -19,4 +19,6 @@ routes all API methods.
 
 MIT License
 
-Copyright (c) 2020 Bruno Hautze
+Copyright (c) 2020 Bruno Hautzenberger
+
+Permission is hereby granted, free of cha

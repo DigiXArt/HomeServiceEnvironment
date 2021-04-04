@@ -48,4 +48,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/gorilla/m
+	"github.com/gorilla/mux"
+)
+
+var storage StorageInterface = &Storage{}

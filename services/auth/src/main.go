@@ -52,4 +52,7 @@ import (
 )
 
 var storage StorageInterface = &Storage{}
-var tokenbuilder TokenBuilderInterface = &To
+var tokenbuilder TokenBuilderInterface = &TokenBuilder{}
+var api APIInterface = &API{}
+
+//i

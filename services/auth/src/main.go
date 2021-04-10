@@ -55,4 +55,6 @@ var storage StorageInterface = &Storage{}
 var tokenbuilder TokenBuilderInterface = &TokenBuilder{}
 var api APIInterface = &API{}
 
-//i
+//init initializes storage and api
+func init() {
+	storage.

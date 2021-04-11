@@ -66,4 +66,5 @@ func init() {
 func main() {
 	r := mux.NewRouter()
 
-	r.HandleFunc
+	r.HandleFunc("/login", api.UserLogin).Methods("POST")
+	r.HandleFunc("/

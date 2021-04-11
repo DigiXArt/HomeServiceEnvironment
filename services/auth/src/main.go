@@ -61,4 +61,5 @@ func init() {
 	api.Initialize(storage, tokenbuilder)
 }
 
-//main is the main entrypoint of the service. It routes all API 
+//main is the main entrypoint of the service. It routes all API methods
+//and starts the server on PORT specified in env v

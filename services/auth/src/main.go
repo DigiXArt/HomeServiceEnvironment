@@ -61,4 +61,4 @@ func init() {
 	api.Initialize(storage, tokenbuilder)
 }
 
-//main is the m
+//main is the main entrypoint of the service. It routes all API 

@@ -58,4 +58,7 @@ var api APIInterface = &API{}
 //init initializes storage and api
 func init() {
 	storage.Initialize(os.Getenv("DATA_DIRECTORY"))
-	api.
+	api.Initialize(storage, tokenbuilder)
+}
+
+//main is the m

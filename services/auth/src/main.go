@@ -68,3 +68,4 @@ func main() {
 
 	r.HandleFunc("/login", api.UserLogin).Methods("POST")
 	r.HandleFunc("/decode", api.DecodeToken).Methods("POST")
+	r.HandleFunc("/refresh", api.RefreshToken).Meth

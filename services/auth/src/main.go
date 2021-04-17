@@ -67,4 +67,4 @@ func main() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/login", api.UserLogin).Methods("POST")
-	r.HandleFunc("/
+	r.HandleFunc("/decode", api.DecodeToken).Methods("POST")

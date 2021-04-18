@@ -69,4 +69,6 @@ func main() {
 	r.HandleFunc("/login", api.UserLogin).Methods("POST")
 	r.HandleFunc("/decode", api.DecodeToken).Methods("POST")
 	r.HandleFunc("/refresh", api.RefreshToken).Methods("POST")
-	r.HandleFunc("/servicelogin", api.S
+	r.HandleFunc("/servicelogin", api.ServiceLogin).Methods("POST")
+
+	// Bind to 

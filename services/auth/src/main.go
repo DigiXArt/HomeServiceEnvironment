@@ -72,4 +72,4 @@ func main() {
 	r.HandleFunc("/servicelogin", api.ServiceLogin).Methods("POST")
 
 	// Bind to a port and pass our router in
-	log.Fatal(
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", os.Geten

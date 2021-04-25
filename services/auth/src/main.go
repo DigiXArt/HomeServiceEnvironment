@@ -71,4 +71,5 @@ func main() {
 	r.HandleFunc("/refresh", api.RefreshToken).Methods("POST")
 	r.HandleFunc("/servicelogin", api.ServiceLogin).Methods("POST")
 
-	// Bind to 
+	// Bind to a port and pass our router in
+	log.Fatal(

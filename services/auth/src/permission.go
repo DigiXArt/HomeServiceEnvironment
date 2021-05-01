@@ -1,3 +1,5 @@
 /*
 permission.go
-Holds the persmiss
+Holds the persmission type.
+
+##########################################

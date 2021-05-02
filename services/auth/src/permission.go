@@ -4,4 +4,8 @@ Holds the persmission type.
 
 ###################################################################################
 
-MIT
+MIT License
+
+Copyright (c) 2020 Bruno Hautzenberger
+
+Pe

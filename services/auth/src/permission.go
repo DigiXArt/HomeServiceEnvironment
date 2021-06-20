@@ -28,4 +28,6 @@ SOFTWARE.
 */
 package main
 
-// Permision holds all information about a specific perm
+// Permision holds all information about a specific permission
+type Permission struct {
+	Key  str

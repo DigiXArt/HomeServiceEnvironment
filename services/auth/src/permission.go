@@ -28,4 +28,4 @@ SOFTWARE.
 */
 package main
 
-// Permisi
+// Permision holds all information about a specific perm

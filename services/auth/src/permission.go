@@ -30,4 +30,5 @@ package main
 
 // Permision holds all information about a specific permission
 type Permission struct {
-	Key  str
+	Key  string                 `json:"key"`
+	Meta map[string]int

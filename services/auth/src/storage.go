@@ -1,7 +1,8 @@
 
 /*
-service.go
-Holds the service type.
+storage.go
+Defines the storage interface of this application and implements the
+actual json object storage based on data files.
 
 ###################################################################################
 
@@ -29,8 +30,8 @@ SOFTWARE.
 */
 package main
 
-// Service contains all information about a service to login
-type Service struct {
-	ID      string
-	AuthKey string // actually something like the password of this service
-}
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"log"

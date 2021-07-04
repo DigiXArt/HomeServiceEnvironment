@@ -82,3 +82,52 @@ func (s *Storage) getDirectoryPath(name string) (string, error) {
 
 	return path, nil
 }
+
+// GetUser loads a user. If it does not exists it returns nil as user
+func (s *Storage) GetUser(ID string) (*User, error) {
+	if ID == "su" {
+		user := &User{
+			ID: "su",
+			Permissions: []Permission{
+				Permission{Key: "ROOT"},
+			},
+		}
+		return user, nil
+	}
+
+	usersPath, err := s.getDirectoryPath(usersDirectory)
+	if err != nil {
+		return nil, err
+	}
+
+	userPath := filepath.Join(usersPath, fmt.Sprintf("%v.json", ID))
+	user := &User{}
+	if s.fileExists(userPath) {
+		jsonFile, err := os.Open(userPath)
+		if err != nil {
+			return nil, err
+		}
+		defer jsonFile.Close()
+
+		byteValue, err := ioutil.ReadAll(jsonFile)
+		if err != nil {
+			return nil, err
+		}
+
+		err = json.Unmarshal(byteValue, user)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		return nil, nil
+	}
+
+	return user, nil
+}
+
+// GetUserByCredentials loads a User using given credentials
+func (s *Storage) GetUserByCredentials(username string, password string) (*User, bool, error) {
+	log.Println(fmt.Sprintf("%v %v %v", username, password, os.Getenv("SU_PWD")))
+	if username == "su" && password == os.Getenv("SU_PWD") {
+		user := &User{
+			ID: "su",

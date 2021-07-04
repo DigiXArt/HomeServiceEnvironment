@@ -35,3 +35,50 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
+	"path/filepath"
+)
+
+var usersDirectory = "users"
+var servicesDirectory = "services"
+
+//StorageInterface defines the interface for the data storage.
+type StorageInterface interface {
+	Initialize(dataRootDirectory string)
+	GetUserByCredentials(username string, passowrd string) (*User, bool, error)
+	GetUser(ID string) (*User, error)
+	GetServiceByCredentials(ID string, key string) (*Service, bool, error)
+	GetService(ID string) (*Service, error)
+}
+
+// Storage implements StorageInterface
+type Storage struct {
+	DataRootDirectory string
+}
+
+// Initialize sets the data root directory
+func (s *Storage) Initialize(dataRootDirectory string) {
+	s.DataRootDirectory = dataRootDirectory
+}
+
+// fileExists checks if a file exists
+func (s *Storage) fileExists(filePath string) bool {
+	info, err := os.Stat(filePath)
+	if os.IsNotExist(err) {
+		return false
+	}
+	return !info.IsDir()
+}
+
+// getDirectoryPath is used to get a directory inside the data root
+// directory. If it does not exist, it will be created.
+func (s *Storage) getDirectoryPath(name string) (string, error) {
+	path := filepath.Join(s.DataRootDirectory, name)
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		if err := os.Mkdir(path, 0755); err != nil {
+			return path, err
+		}
+	}
+
+	return path, nil
+}

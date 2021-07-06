@@ -131,3 +131,50 @@ func (s *Storage) GetUserByCredentials(username string, password string) (*User,
 	if username == "su" && password == os.Getenv("SU_PWD") {
 		user := &User{
 			ID: "su",
+			Permissions: []Permission{
+				Permission{Key: "ROOT"},
+			},
+		}
+		return user, true, nil
+	}
+	user, err := s.GetUser(username)
+	if err != nil {
+		return nil, false, err
+	}
+
+	if user == nil {
+		return nil, false, nil
+	}
+
+	if user.Password != password {
+		return nil, false, nil
+	}
+
+	return user, true, nil
+}
+
+// GetService loads a service. If it does not exist it returns nil as service
+func (s *Storage) GetService(ID string) (*Service, error) {
+	storagePath, err := s.getDirectoryPath(servicesDirectory)
+	if err != nil {
+		return nil, err
+	}
+
+	servicePath := filepath.Join(storagePath, fmt.Sprintf("%v.json", ID))
+	service := &Service{}
+	if s.fileExists(servicePath) {
+		jsonFile, err := os.Open(servicePath)
+		if err != nil {
+			return nil, err
+		}
+		defer jsonFile.Close()
+
+		byteValue, err := ioutil.ReadAll(jsonFile)
+		if err != nil {
+			return nil, err
+		}
+
+		err = json.Unmarshal(byteValue, service)
+		if err != nil {
+			return nil, err
+		}

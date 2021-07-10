@@ -61,3 +61,45 @@ type TokenBuilder struct{}
 
 // CreateUserToken builds a new UserTokenData instance for given user
 func (t *TokenBuilder) CreateUserToken(user *User) (*UserTokenData, error) {
+	atSecret := os.Getenv("AUTH_ACCESS_SECRET")
+	rfSecret := os.Getenv("AUTH_REFRESH_SECRET")
+
+	var err error
+
+	// build TokenData
+	td := &UserTokenData{
+		ATExpiresAt: time.Now().Add(time.Minute * 15).UTC(),
+		RFExpiresAt: time.Now().Add(time.Hour * 24 * 7).UTC(),
+	}
+
+	// Create Access Token
+	atClaims := jwt.MapClaims{}
+	atClaims["authorized"] = true
+	atClaims["user_id"] = user.ID
+
+	permissions, err := json.Marshal(user.Permissions)
+	if err != nil {
+		return nil, err
+	}
+	atClaims["permissions"] = string(permissions)
+
+	atClaims["exp"] = td.ATExpiresAt
+	at := jwt.NewWithClaims(jwt.SigningMethodHS256, atClaims)
+	td.AccessToken, err = at.SignedString([]byte(atSecret))
+	if err != nil {
+		return nil, err
+	}
+
+	// Create Refresh Token
+	rfClaims := jwt.MapClaims{}
+	rfClaims["authorized"] = true
+	rfClaims["user_id"] = user.ID
+	rfClaims["exp"] = td.RFExpiresAt
+	rf := jwt.NewWithClaims(jwt.SigningMethodHS256, rfClaims)
+	td.RefreshToken, err = rf.SignedString([]byte(rfSecret))
+	if err != nil {
+		return nil, err
+	}
+
+	return td, nil
+}

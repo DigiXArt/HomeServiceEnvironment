@@ -103,3 +103,24 @@ func (t *TokenBuilder) CreateUserToken(user *User) (*UserTokenData, error) {
 
 	return td, nil
 }
+
+// CreateServiceToken builds a new ServiceTokenData instance for given service
+func (t *TokenBuilder) CreateServiceToken(service *Service) (*ServiceTokenData, error) {
+	atSecret := os.Getenv("AUTH_SERVICE_SECRET")
+
+	var err error
+
+	td := &ServiceTokenData{}
+
+	// Create Token
+	sClaims := jwt.MapClaims{}
+	sClaims["authorized"] = true
+	sClaims["service_id"] = service.ID
+	s := jwt.NewWithClaims(jwt.SigningMethodHS256, sClaims)
+	td.AccessToken, err = s.SignedString([]byte(atSecret))
+	if err != nil {
+		return nil, err
+	}
+
+	return td, nil
+}

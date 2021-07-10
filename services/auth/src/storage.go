@@ -178,3 +178,23 @@ func (s *Storage) GetService(ID string) (*Service, error) {
 		if err != nil {
 			return nil, err
 		}
+	} else {
+		return nil, nil
+	}
+
+	return service, nil
+}
+
+// GetServiceByCredentials loads a Service using given credentials.
+func (s *Storage) GetServiceByCredentials(ID string, key string) (*Service, bool, error) {
+	service, err := s.GetService(ID)
+	if err != nil {
+		return nil, false, err
+	}
+
+	if service.AuthKey != key {
+		return nil, false, nil
+	}
+
+	return service, true, nil
+}

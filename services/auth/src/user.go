@@ -6,4 +6,6 @@ Holds the user type.
 
 MIT License
 
-Copy
+Copyright (c) 2020 Bruno Hautzenberger
+
+Permissio

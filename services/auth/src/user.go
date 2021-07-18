@@ -8,4 +8,4 @@ MIT License
 
 Copyright (c) 2020 Bruno Hautzenberger
 
-Permissio
+Permission is hereby granted, free of charge, to any 

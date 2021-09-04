@@ -28,4 +28,6 @@ SOFTWARE.
 */
 package main
 
-// User contains all inform
+// User contains all information about a user to login
+type User struct {
+	

@@ -1,3 +1,4 @@
 # DATA-LOGGER
 data-logger is a service that can be used to store custom json data items
-such as logs or sensor data or what ever you 
+such as logs or sensor data or what ever you want.
+To structure data by type this ser

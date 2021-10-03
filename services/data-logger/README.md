@@ -8,4 +8,7 @@ Also data can't be deleted, so consider this as a long term storage for immutabl
 data.
 You can use this if you want a very lightweight json data storage for your services.
 It shows how you can split data into seperate data files, read query params using
-mux and also how to lock files duri
+mux and also how to lock files during writes using sync.Mutex.
+
+This service is be able to:
+* St

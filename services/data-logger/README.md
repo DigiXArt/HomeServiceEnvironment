@@ -11,4 +11,6 @@ It shows how you can split data into seperate data files, read query params usin
 mux and also how to lock files during writes using sync.Mutex.
 
 This service is be able to:
-* St
+* Store Data 
+* Query Data
+* List all collections

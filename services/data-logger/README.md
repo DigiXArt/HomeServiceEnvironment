@@ -16,4 +16,4 @@ This service is be able to:
 * List all collections
 
 ## Development
-This service is developed using V
+This service is developed using Visual Studio Code and requires the follow

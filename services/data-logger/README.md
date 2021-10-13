@@ -22,4 +22,4 @@ This service is developed using Visual Studio Code and requires the following ex
 * Go
 
 ## Deployment
-This command runs the service on por
+This command runs the service on port 7001 and mounts the local directory /media/

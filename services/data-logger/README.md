@@ -20,3 +20,6 @@ This service is developed using Visual Studio Code and requires the following ex
 * Docker
 * Remote-Containers
 * Go
+
+## Deployment
+This command runs the service on por

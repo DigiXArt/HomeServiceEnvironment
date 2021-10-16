@@ -23,4 +23,4 @@ This service is developed using Visual Studio Code and requires the following ex
 
 ## Deployment
 This command runs the service on port 7001 and mounts the local directory /media/external/storage/data-logger to /data
-whic
+which will be used by the service to write

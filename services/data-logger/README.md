@@ -25,4 +25,8 @@ This service is developed using Visual Studio Code and requires the following ex
 This command runs the service on port 7001 and mounts the local directory /media/external/storage/data-logger to /data
 which will be used by the service to write the data files to.
 ```
-docker run -d -p 7001:7001 --name data-logger -e PORT='7001' -e DATA_DIRECTORY='/data' -v /var/run/docker.sock:/var/run/docker.sock --restart unless-stopped --mount type=bind,source=/media/external/storage/data-logger,target=/data
+docker run -d -p 7001:7001 --name data-logger -e PORT='7001' -e DATA_DIRECTORY='/data' -v /var/run/docker.sock:/var/run/docker.sock --restart unless-stopped --mount type=bind,source=/media/external/storage/data-logger,target=/data data-logger:1.0
+```
+
+## API
+Descript

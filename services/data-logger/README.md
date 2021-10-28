@@ -29,4 +29,4 @@ docker run -d -p 7001:7001 --name data-logger -e PORT='7001' -e DATA_DIRECTORY='
 ```
 
 ## API
-Descript
+Description and examples (cUrl) of all API calls and models of t

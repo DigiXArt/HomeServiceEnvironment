@@ -33,4 +33,4 @@ Description and examples (cUrl) of all API calls and models of this service.
 
 ### Models
 #### Date Item Wrapper Type
-Al
+All logged data items get wrapped into a uniform 

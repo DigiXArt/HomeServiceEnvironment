@@ -33,4 +33,5 @@ Description and examples (cUrl) of all API calls and models of this service.
 
 ### Models
 #### Date Item Wrapper Type
-All logged data items get wrapped into a uniform structure that contains a UUID for this ite
+All logged data items get wrapped into a uniform structure that contains a UUID for this item and
+also a created-at timestamp. The original raw data

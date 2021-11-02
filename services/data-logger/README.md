@@ -37,4 +37,5 @@ All logged data items get wrapped into a uniform structure that contains a UUID 
 also a created-at timestamp. The original raw data item can be found in "payload".
 ```json
 {
-        "uuid":"2020-09-03-b8e33721-eea9-41fc-81
+        "uuid":"2020-09-03-b8e33721-eea9-41fc-8173-98c0b23b5dad",
+        "created-at":"2020-09-03T18:07:10

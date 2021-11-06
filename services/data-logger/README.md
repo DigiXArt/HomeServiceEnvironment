@@ -39,4 +39,8 @@ also a created-at timestamp. The original raw data item can be found in "payload
 {
         "uuid":"2020-09-03-b8e33721-eea9-41fc-8173-98c0b23b5dad",
         "created-at":"2020-09-03T18:07:10.427571Z",
-        "payload":{"valueA":"some cu
+        "payload":{"valueA":"some custom value","valueB":42}
+}
+```
+
+#### Query 

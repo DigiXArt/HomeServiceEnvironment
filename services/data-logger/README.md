@@ -47,4 +47,10 @@ also a created-at timestamp. The original raw data item can be found in "payload
 ```json
 {
         "data":[
-                {Data-Item-Wrapper-Item 1}, {Data-Item-Wrapper-It
+                {Data-Item-Wrapper-Item 1}, {Data-Item-Wrapper-Item 2}, ...
+        ]
+}
+```
+
+#### Collection List
+``

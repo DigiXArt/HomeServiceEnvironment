@@ -65,4 +65,9 @@ also a created-at timestamp. The original raw data item can be found in "payload
         "error":{
                 "message":"No value found for key myrealm/myke",
                 "status":404,
-           
+                "code":3
+                }
+}
+```
+
+### Methods

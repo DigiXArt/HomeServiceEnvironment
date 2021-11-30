@@ -74,4 +74,5 @@ also a created-at timestamp. The original raw data item can be found in "payload
 #### WRITE
 Writes a new data item to a collection. Not existing collections will automatically be created.
 
-This example creates a new data item in collection "mycollection". It will return the created
+This example creates a new data item in collection "mycollection". It will return the created item wrapped in
+the data item wrapper structure.

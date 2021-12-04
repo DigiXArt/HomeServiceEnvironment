@@ -78,3 +78,5 @@ This example creates a new data item in collection "mycollection". It will retur
 the data item wrapper structure.
 ```
 curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"valueA":"some custom value"

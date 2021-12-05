@@ -84,4 +84,5 @@ curl --header "Content-Type: application/json" \
 ```
 
 #### QUERY
-Query for da
+Query for data items in a collection in a time range.
+u

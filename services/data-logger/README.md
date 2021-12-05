@@ -80,4 +80,8 @@ the data item wrapper structure.
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"valueA":"some custom value", "valueB": 42}' \
-  http://localhost:7001/
+  http://localhost:7001/mycollection
+```
+
+#### QUERY
+Query for da

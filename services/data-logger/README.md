@@ -88,4 +88,4 @@ Query for data items in a collection in a time range.
 u
 This example gets all data items between 2020-09-01T10:30:00Z and 2020-09-03T22:45:00Z in collection "testCollection".
 ```
-curl -i 'ht
+curl -i 'http://localhost:7001/testCollection?from=202

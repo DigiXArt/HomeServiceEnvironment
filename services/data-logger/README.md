@@ -92,4 +92,7 @@ curl -i 'http://localhost:7001/testCollection?from=2020-09-01T10:30:00Z&to=2020-
 ```
 
 #### GET COLLECTIONS
-Gets all co
+Gets all collections.
+
+```
+curl -i http://localhost:7001/inf

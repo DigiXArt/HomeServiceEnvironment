@@ -1,3 +1,3 @@
 /*
 api.go
-Defines the
+Defines the RESTful API interface of this applicatio

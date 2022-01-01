@@ -10,4 +10,4 @@ MIT License
 Copyright (c) 2020 Bruno Hautzenberger
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this
+of this software and associated documentation files (the "Softwar

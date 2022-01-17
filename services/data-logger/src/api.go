@@ -37,3 +37,6 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
+)
+
+//APIInterface defines the interface of the RESTful A

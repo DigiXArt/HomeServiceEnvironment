@@ -39,4 +39,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-//APIInterface defines the interface of the RESTful A
+//APIInterface defines the interface of the RESTful API
+type APIInterface interface {
+	Query(w http.ResponseWri

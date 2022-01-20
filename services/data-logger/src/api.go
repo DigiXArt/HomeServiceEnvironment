@@ -43,4 +43,5 @@ import (
 type APIInterface interface {
 	Query(w http.ResponseWriter, r *http.Request)
 	Write(w http.ResponseWriter, r *http.Request)
-	Collections(w http.ResponseWriter,
+	Collections(w http.ResponseWriter, r *http.Request)
+	Initialize(storage StorageInterfac

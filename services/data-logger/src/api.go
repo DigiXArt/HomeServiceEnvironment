@@ -42,4 +42,5 @@ import (
 //APIInterface defines the interface of the RESTful API
 type APIInterface interface {
 	Query(w http.ResponseWriter, r *http.Request)
-	Write(w http.ResponseWriter, r
+	Write(w http.ResponseWriter, r *http.Request)
+	Collections(w http.ResponseWriter,

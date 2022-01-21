@@ -52,4 +52,5 @@ type API struct {
 	Storage StorageInterface
 }
 
-//Initialize i
+//Initialize initializes the API by setting the active storage
+fu

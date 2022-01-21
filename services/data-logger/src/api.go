@@ -49,3 +49,7 @@ type APIInterface interface {
 
 //API implements APIInterface
 type API struct {
+	Storage StorageInterface
+}
+
+//Initialize i

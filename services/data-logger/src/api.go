@@ -44,4 +44,8 @@ type APIInterface interface {
 	Query(w http.ResponseWriter, r *http.Request)
 	Write(w http.ResponseWriter, r *http.Request)
 	Collections(w http.ResponseWriter, r *http.Request)
-	Initialize(storage StorageInterfac
+	Initialize(storage StorageInterface)
+}
+
+//API implements APIInterface
+type API struct {

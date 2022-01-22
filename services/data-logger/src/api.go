@@ -53,4 +53,8 @@ type API struct {
 }
 
 //Initialize initializes the API by setting the active storage
-func (a *API) Initialize(storage StorageInterfa
+func (a *API) Initialize(storage StorageInterface) {
+	a.Storage = storage
+}
+
+func (a *API) GetD

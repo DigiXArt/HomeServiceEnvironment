@@ -60,4 +60,7 @@ func (a *API) Initialize(storage StorageInterface) {
 func (a *API) GetDateFilter(name string, r *http.Request) (time.Time, error) {
 	val := r.FormValue(name)
 	if len(val) == 0 {
-		return time.Now().UTC(), e
+		return time.Now().UTC(), errors.New("Value missing")
+	}
+
+	return t

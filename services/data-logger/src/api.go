@@ -57,4 +57,4 @@ func (a *API) Initialize(storage StorageInterface) {
 	a.Storage = storage
 }
 
-func (a *API) GetD
+func (a *API) GetDateFilter(name string, r *http.Request) (t

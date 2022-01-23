@@ -57,4 +57,6 @@ func (a *API) Initialize(storage StorageInterface) {
 	a.Storage = storage
 }
 
-func (a *API) GetDateFilter(name string, r *http.Request) (t
+func (a *API) GetDateFilter(name string, r *http.Request) (time.Time, error) {
+	val := r.FormValue(name)
+	if le

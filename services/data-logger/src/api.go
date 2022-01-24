@@ -63,4 +63,7 @@ func (a *API) GetDateFilter(name string, r *http.Request) (time.Time, error) {
 		return time.Now().UTC(), errors.New("Value missing")
 	}
 
-	return t
+	return time.Parse(time.RFC3339, val)
+}
+
+//API handler to get data i

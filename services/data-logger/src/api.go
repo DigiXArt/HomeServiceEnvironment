@@ -67,4 +67,6 @@ func (a *API) GetDateFilter(name string, r *http.Request) (time.Time, error) {
 }
 
 //API handler to get data items
-func (a *API) Query(w http.ResponseWriter, r *
+func (a *API) Query(w http.ResponseWriter, r *http.Request) {
+	// Get Request Vars
+	vars 

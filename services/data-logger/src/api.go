@@ -76,3 +76,5 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	startDate, err := a.GetDateFilter("from", r)
+	if 

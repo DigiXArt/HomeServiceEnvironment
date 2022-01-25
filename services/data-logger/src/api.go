@@ -71,4 +71,5 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 	// Get Request Vars
 	vars := mux.Vars(r)
 	collectionName, ok := vars["collection"]
-	if 
+	if !ok {
+		RaiseError(w, "Collection is missing", http.Sta

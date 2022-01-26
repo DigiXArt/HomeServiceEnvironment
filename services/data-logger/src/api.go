@@ -77,4 +77,5 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 	}
 
 	startDate, err := a.GetDateFilter("from", r)
-	if 
+	if err != nil {
+		RaiseError(w, "Invalid from-d

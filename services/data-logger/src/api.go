@@ -82,4 +82,5 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	endDate, 
+	endDate, err := a.GetDateFilter("to", r)
+	if err != ni

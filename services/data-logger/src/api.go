@@ -84,4 +84,8 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 
 	endDate, err := a.GetDateFilter("to", r)
 	if err != nil {
-		RaiseError(w, "Invalid to-date", http
+		RaiseError(w, "Invalid to-date", http.StatusBadRequest, ErrorCodeInvalidToDate)
+		return
+	}
+
+	/

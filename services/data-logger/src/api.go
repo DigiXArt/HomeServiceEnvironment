@@ -89,4 +89,5 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Load value
-	result, err := a.Storage.ReadData(collection
+	result, err := a.Storage.ReadData(collectionName, startDate, endDate)
+	if err != ni

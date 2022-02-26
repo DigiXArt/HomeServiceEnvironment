@@ -91,4 +91,5 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 	// Load value
 	result, err := a.Storage.ReadData(collectionName, startDate, endDate)
 	if err != nil {
-		RaiseError(w, "Error loading data.", http.Sta
+		RaiseError(w, "Error loading data.", http.StatusNotFound, ErrorCodeInternal)
+		retu

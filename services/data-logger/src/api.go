@@ -96,4 +96,8 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// prepare message
-	msg := DataListMessag
+	msg := DataListMessageType{
+		Data: result,
+	}
+
+	// Write Response

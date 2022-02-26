@@ -92,4 +92,8 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 	result, err := a.Storage.ReadData(collectionName, startDate, endDate)
 	if err != nil {
 		RaiseError(w, "Error loading data.", http.StatusNotFound, ErrorCodeInternal)
-		retu
+		return
+	}
+
+	// prepare message
+	msg := DataListMessag

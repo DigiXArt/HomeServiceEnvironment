@@ -103,4 +103,7 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 	// Write Response
 	w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	json.NewEnc
+	json.NewEncoder(w).Encode(msg)
+}
+
+//API handler to wri

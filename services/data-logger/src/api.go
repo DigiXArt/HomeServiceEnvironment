@@ -106,4 +106,5 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(msg)
 }
 
-//API handler to wri
+//API handler to write new data items
+func (a *API) Write(w http.

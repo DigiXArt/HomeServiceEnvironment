@@ -101,3 +101,4 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Write Response
+	w.Header().Add("Content-Type", "application/

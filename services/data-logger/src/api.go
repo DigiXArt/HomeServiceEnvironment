@@ -110,4 +110,6 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 func (a *API) Write(w http.ResponseWriter, r *http.Request) {
 	// Get Request Vars
 	vars := mux.Vars(r)
-	collectionName, ok :
+	collectionName, ok := vars["collection"]
+	if !ok {
+		R

@@ -107,4 +107,5 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 }
 
 //API handler to write new data items
-func (a *API) Write(w http.
+func (a *API) Write(w http.ResponseWriter, r *http.Request) {
+	// Get 

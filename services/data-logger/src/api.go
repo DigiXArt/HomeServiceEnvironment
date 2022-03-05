@@ -108,4 +108,6 @@ func (a *API) Query(w http.ResponseWriter, r *http.Request) {
 
 //API handler to write new data items
 func (a *API) Write(w http.ResponseWriter, r *http.Request) {
-	// Get 
+	// Get Request Vars
+	vars := mux.Vars(r)
+	collectionName, ok :

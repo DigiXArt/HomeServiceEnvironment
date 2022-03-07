@@ -112,4 +112,8 @@ func (a *API) Write(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	collectionName, ok := vars["collection"]
 	if !ok {
-		RaiseError(w, "Collection is missing", http.StatusBadRe
+		RaiseError(w, "Collection is missing", http.StatusBadRequest, ErrorCodeCollectionMissing)
+		return
+	}
+
+	payload,

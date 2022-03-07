@@ -116,4 +116,5 @@ func (a *API) Write(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	payload,
+	payload, err := PayloadFromRequestJson(r.Body)
+	if err != 

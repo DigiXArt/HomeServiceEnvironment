@@ -118,4 +118,8 @@ func (a *API) Write(w http.ResponseWriter, r *http.Request) {
 
 	payload, err := PayloadFromRequestJson(r.Body)
 	if err != nil {
-		RaiseError(w, "Invalid request body", http.StatusBadRequest, ErrorCodeInvalidRequestB
+		RaiseError(w, "Invalid request body", http.StatusBadRequest, ErrorCodeInvalidRequestBody)
+		return
+	}
+
+	data, err := a.Storage.WriteData(collectionName, payload

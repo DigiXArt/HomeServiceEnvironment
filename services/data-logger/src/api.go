@@ -117,4 +117,5 @@ func (a *API) Write(w http.ResponseWriter, r *http.Request) {
 	}
 
 	payload, err := PayloadFromRequestJson(r.Body)
-	if err != 
+	if err != nil {
+		RaiseError(w, "Invalid request body", ht

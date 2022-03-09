@@ -124,4 +124,5 @@ func (a *API) Write(w http.ResponseWriter, r *http.Request) {
 
 	data, err := a.Storage.WriteData(collectionName, payload)
 
-	w.Header().Add("Content-Type", "applic
+	w.Header().Add("Content-Type", "application/json")
+	w.WriteHeader(http.Statu

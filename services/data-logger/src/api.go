@@ -122,4 +122,6 @@ func (a *API) Write(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	data, err := a.Storage.WriteData(collectionName, payload
+	data, err := a.Storage.WriteData(collectionName, payload)
+
+	w.Header().Add("Content-Type", "applic

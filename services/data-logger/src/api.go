@@ -130,4 +130,5 @@ func (a *API) Write(w http.ResponseWriter, r *http.Request) {
 }
 
 //API handler to get collections
-func (a *API) Collections(w h
+func (a *API) Collections(w http.ResponseWriter, r *http.Request) {
+	collections,

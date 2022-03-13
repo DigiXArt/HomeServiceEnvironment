@@ -129,4 +129,5 @@ func (a *API) Write(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(data)
 }
 
-//API han
+//API handler to get collections
+func (a *API) Collections(w h

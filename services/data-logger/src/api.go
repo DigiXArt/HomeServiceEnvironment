@@ -133,4 +133,4 @@ func (a *API) Write(w http.ResponseWriter, r *http.Request) {
 func (a *API) Collections(w http.ResponseWriter, r *http.Request) {
 	collections, err := a.Storage.ListCollections()
 	if err != nil {
-		RaiseError(w, fmt.Sprintf
+		RaiseError(w, fmt.Sprintf("Failed to load collections: %v", err), http.Stat

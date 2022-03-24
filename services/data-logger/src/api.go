@@ -137,4 +137,5 @@ func (a *API) Collections(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	collection
+	collectionMessage := CollectionListMessageType{
+		Collecti

@@ -141,4 +141,5 @@ func (a *API) Collections(w http.ResponseWriter, r *http.Request) {
 		Collections: collections,
 	}
 
-	w.Header().Add("Content-T
+	w.Header().Add("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK

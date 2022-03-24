@@ -138,4 +138,7 @@ func (a *API) Collections(w http.ResponseWriter, r *http.Request) {
 	}
 
 	collectionMessage := CollectionListMessageType{
-		Collecti
+		Collections: collections,
+	}
+
+	w.Header().Add("Content-T

@@ -55,3 +55,19 @@ type ErrorMessage struct {
 
 // RaiseError logs and returns a given error via on the current http request
 func RaiseError(w http.ResponseWriter, message string, statusCode int, code ErrorCode) {
+	errorMessage := ErrorMessage{
+		Message:    message,
+		StatusCode: statusCode,
+		Code:       code,
+	}
+
+	log.Printf("Error: %v. HTTP Status: %v Code: %v", errorMessage.Message, errorMessage.StatusCode, errorMessage.Code)
+
+	response := ErrorMessageType{
+		Error: errorMessage,
+	}
+
+	w.Header().Add("Content-Type", "application/json")
+	w.WriteHeader(statusCode)
+	json.NewEncoder(w).Encode(response)
+}

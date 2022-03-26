@@ -30,3 +30,16 @@ SOFTWARE.
 package main
 
 //CollectionListMessageType defines the API message for lists of collections
+type CollectionListMessageType struct {
+	Collections []string `json:"collections"`
+}
+
+//DataListMessageType defines the API message for lists of data items
+type DataListMessageType struct {
+	Data []*Data `json:"data"`
+}
+
+//ErrorMessageType defines the API message for errors
+type ErrorMessageType struct {
+	Error interface{} `json:"error"`
+}

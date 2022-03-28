@@ -8,4 +8,6 @@ date.
 
 MIT License
 
-Copyright (c)
+Copyright (c) 2020 Bruno Hautzenberger
+
+Permission is hereby 

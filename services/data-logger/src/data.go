@@ -10,4 +10,4 @@ MIT License
 
 Copyright (c) 2020 Bruno Hautzenberger
 
-Permission is hereby 
+Permission is hereby granted, free of charge, to any person obtaining 

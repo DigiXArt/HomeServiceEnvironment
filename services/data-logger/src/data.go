@@ -39,4 +39,5 @@ import (
 	guuid "github.com/google/uuid"
 )
 
-// DataFileContent holds 
+// DataFileContent holds all Data items in a single data file
+type DataFile

@@ -40,4 +40,5 @@ import (
 )
 
 // DataFileContent holds all Data items in a single data file
-type DataFile
+type DataFileContent struct {
+	Items []*Data 

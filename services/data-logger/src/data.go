@@ -44,4 +44,5 @@ type DataFileContent struct {
 	Items []*Data `json:"items"`
 }
 
-// GetItemsInRange returns all
+// GetItemsInRange returns all items of a data file between startDate and endDate.
+func (d

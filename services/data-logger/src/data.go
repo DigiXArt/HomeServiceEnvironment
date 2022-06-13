@@ -41,4 +41,7 @@ import (
 
 // DataFileContent holds all Data items in a single data file
 type DataFileContent struct {
-	Items []*Data 
+	Items []*Data `json:"items"`
+}
+
+// GetItemsInRange returns all

@@ -45,4 +45,5 @@ type DataFileContent struct {
 }
 
 // GetItemsInRange returns all items of a data file between startDate and endDate.
-func (df DataFileContent) GetItemsInRange(startDate time.T
+func (df DataFileContent) GetItemsInRange(startDate time.Time, endDate time.Time) []*Data {
+	it

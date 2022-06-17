@@ -46,4 +46,6 @@ type DataFileContent struct {
 
 // GetItemsInRange returns all items of a data file between startDate and endDate.
 func (df DataFileContent) GetItemsInRange(startDate time.Time, endDate time.Time) []*Data {
-	it
+	items := make([]*Data, 0)
+
+	for _, item := range df

@@ -54,4 +54,7 @@ func (df DataFileContent) GetItemsInRange(startDate time.Time, endDate time.Time
 		}
 	}
 
-	r
+	return items
+}
+
+// Data wrapps the actual logged data (

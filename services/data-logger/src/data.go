@@ -49,4 +49,9 @@ func (df DataFileContent) GetItemsInRange(startDate time.Time, endDate time.Time
 	items := make([]*Data, 0)
 
 	for _, item := range df.Items {
-		if item.CreatedAt.After(startDate) || item.CreatedAt.Equal(startDate) || item.CreatedAt.Before(endDate) || item.CreatedAt.Equal(endDat
+		if item.CreatedAt.After(startDate) || item.CreatedAt.Equal(startDate) || item.CreatedAt.Before(endDate) || item.CreatedAt.Equal(endDate) {
+			items = append(items, item)
+		}
+	}
+
+	r

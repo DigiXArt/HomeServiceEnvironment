@@ -48,4 +48,5 @@ type DataFileContent struct {
 func (df DataFileContent) GetItemsInRange(startDate time.Time, endDate time.Time) []*Data {
 	items := make([]*Data, 0)
 
-	for _, item := range df
+	for _, item := range df.Items {
+		if item.CreatedAt.After(startDat

@@ -65,4 +65,5 @@ type Data struct {
 	Payload   map[string]interface{} `json:"payload"`
 }
 
-// Initialize sets the UUID and Cre
+// Initialize sets the UUID and CreatedAt date.
+func (d *Data) Initial

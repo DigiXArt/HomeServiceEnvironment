@@ -61,4 +61,5 @@ func (df DataFileContent) GetItemsInRange(startDate time.Time, endDate time.Time
 // an UUID, a CreatedAt date and also the original data that should be saved (Payload).
 type Data struct {
 	UUID      string                 `json:"uuid"`
-	CreatedAt time.
+	CreatedAt time.Time              `json:"created-at"`
+	P

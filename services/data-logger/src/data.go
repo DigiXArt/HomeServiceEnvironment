@@ -66,4 +66,6 @@ type Data struct {
 }
 
 // Initialize sets the UUID and CreatedAt date.
-func (d *Data) Initial
+func (d *Data) Initialize() {
+	d.UUID = strings.Join(
+		[]string{time.Now().U

@@ -69,4 +69,9 @@ type Data struct {
 func (d *Data) Initialize() {
 	d.UUID = strings.Join(
 		[]string{time.Now().UTC().Format("2006-01-02"), guuid.New().String()},
-		"-"
+		"-",
+	)
+	d.CreatedAt = time.Now().UTC()
+}
+
+// Pa

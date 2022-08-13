@@ -74,4 +74,4 @@ func (d *Data) Initialize() {
 	d.CreatedAt = time.Now().UTC()
 }
 
-// Pa
+// PayloadFromRequestJson parses the given json data of 

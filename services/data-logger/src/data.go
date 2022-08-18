@@ -74,4 +74,5 @@ func (d *Data) Initialize() {
 	d.CreatedAt = time.Now().UTC()
 }
 
-// PayloadFromRequestJson parses the given json data of 
+// PayloadFromRequestJson parses the given json data of the request's io.ReadCloser
+func PayloadFromReques

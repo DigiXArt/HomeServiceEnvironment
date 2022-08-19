@@ -75,4 +75,5 @@ func (d *Data) Initialize() {
 }
 
 // PayloadFromRequestJson parses the given json data of the request's io.ReadCloser
-func PayloadFromRequestJson(rc io.ReadCloser) (map[string]interf
+func PayloadFromRequestJson(rc io.ReadCloser) (map[string]interface{}, error) {
+	payload := make(map[st

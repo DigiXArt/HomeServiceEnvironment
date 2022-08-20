@@ -49,3 +49,29 @@ package main
 import (
 	"fmt"
 	"log"
+	"net/http"
+	"os"
+
+	"github.com/gorilla/mux"
+)
+
+var storage StorageInterface = &Storage{}
+var api APIInterface = &API{}
+
+//init initializes storage and api
+func init() {
+	storage.Initialize(os.Getenv("DATA_DIRECTORY"))
+	api.Initialize(storage)
+}
+
+//main is the main entrypoint of the service. It routes all API methods
+//and starts the server on PORT specified in env vars.
+func main() {
+	r := mux.NewRouter()
+	r.HandleFunc("/info/collections", api.Collections).Methods("GET")
+	r.HandleFunc("/{collection}", api.Query).Methods("GET")
+	r.HandleFunc("/{collection}", api.Write).Methods("POST")
+
+	// Bind to a port and pass our router in
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", os.Getenv("PORT")), r))
+}

@@ -78,4 +78,6 @@ func (d *Data) Initialize() {
 func PayloadFromRequestJson(rc io.ReadCloser) (map[string]interface{}, error) {
 	payload := make(map[string]interface{})
 
-	err := json.NewDecode
+	err := json.NewDecoder(rc).Decode(&payload)
+	if err != nil {
+	

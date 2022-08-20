@@ -80,4 +80,8 @@ func PayloadFromRequestJson(rc io.ReadCloser) (map[string]interface{}, error) {
 
 	err := json.NewDecoder(rc).Decode(&payload)
 	if err != nil {
-	
+		return nil, err
+	}
+
+	return payload, nil
+}

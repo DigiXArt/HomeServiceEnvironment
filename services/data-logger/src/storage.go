@@ -5,4 +5,6 @@ actual json object storage based on data files.
 
 ###################################################################################
 
-MI
+MIT License
+
+Copyright (c) 2020 Bruno Hautz

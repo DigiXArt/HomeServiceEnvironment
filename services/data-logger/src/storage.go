@@ -7,4 +7,6 @@ actual json object storage based on data files.
 
 MIT License
 
-Copyright (c) 2020 Bruno Hautz
+Copyright (c) 2020 Bruno Hautzenberger
+
+Permission is hereby grant

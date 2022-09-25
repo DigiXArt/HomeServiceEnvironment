@@ -39,4 +39,6 @@ import (
 	"time"
 )
 
-//StorageInterface defines the interface for th
+//StorageInterface defines the interface for the data storage.
+type StorageInterface interface {
+	Initi

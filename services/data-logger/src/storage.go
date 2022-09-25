@@ -41,4 +41,5 @@ import (
 
 //StorageInterface defines the interface for the data storage.
 type StorageInterface interface {
-	Initi
+	Initialize(dataRootDirectory string)
+	ReadData(collectionName 

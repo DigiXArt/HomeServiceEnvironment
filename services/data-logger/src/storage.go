@@ -36,4 +36,7 @@ import (
 	"os"
 	"path/filepath"
 	"sync"
-	"tim
+	"time"
+)
+
+//StorageInterface defines the interface for th

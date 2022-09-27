@@ -42,4 +42,5 @@ import (
 //StorageInterface defines the interface for the data storage.
 type StorageInterface interface {
 	Initialize(dataRootDirectory string)
-	ReadData(collectionName string, startDate time.Time, endDate time.Time) ([]*
+	ReadData(collectionName string, startDate time.Time, endDate time.Time) ([]*Data, error)
+	WriteData(collectionName string, payload

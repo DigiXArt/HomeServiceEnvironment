@@ -47,4 +47,6 @@ type StorageInterface interface {
 	ListCollections() ([]string, error)
 }
 
-//Implements StorageInterf
+//Implements StorageInterface
+type Storage struct {
+	DataRootDi

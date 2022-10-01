@@ -43,4 +43,5 @@ import (
 type StorageInterface interface {
 	Initialize(dataRootDirectory string)
 	ReadData(collectionName string, startDate time.Time, endDate time.Time) ([]*Data, error)
-	WriteData(collectionName string, payload
+	WriteData(collectionName string, payload map[string]interface{}) (*Data, error)
+	ListCollection

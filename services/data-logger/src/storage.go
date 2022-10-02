@@ -49,4 +49,7 @@ type StorageInterface interface {
 
 //Implements StorageInterface
 type Storage struct {
-	DataRootDi
+	DataRootDirectory string
+	MutexLock         sync.Mutex
+}
+

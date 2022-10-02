@@ -53,3 +53,5 @@ type Storage struct {
 	MutexLock         sync.Mutex
 }
 
+// Initialize sets the data root directory
+fun

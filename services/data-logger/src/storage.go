@@ -54,4 +54,4 @@ type Storage struct {
 }
 
 // Initialize sets the data root directory
-fun
+func (s *Storage) Initialize(dataRootDirectory string)

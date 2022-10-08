@@ -59,3 +59,4 @@ func (s *Storage) Initialize(dataRootDirectory string) {
 }
 
 // getCollectionPath get's the actual path of a collection.
+// If the collection does not exist it will creat

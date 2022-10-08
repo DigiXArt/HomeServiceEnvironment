@@ -58,4 +58,4 @@ func (s *Storage) Initialize(dataRootDirectory string) {
 	s.DataRootDirectory = dataRootDirectory
 }
 
-// 
+// getCollectionPath get's the actual path of a collection.

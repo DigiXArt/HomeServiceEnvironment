@@ -63,4 +63,5 @@ func (s *Storage) Initialize(dataRootDirectory string) {
 // colelction first.
 func (s *Storage) getCollectionPath(collectionName string) (string, error) {
 	path := filepath.Join(s.DataRootDirectory, collectionName)
-	if _, err := os.St
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		if err := os.Mkdir(path,

@@ -61,4 +61,5 @@ func (s *Storage) Initialize(dataRootDirectory string) {
 // getCollectionPath get's the actual path of a collection.
 // If the collection does not exist it will create a new directory for the
 // colelction first.
-func (s *Storage) getCollectionPath(collectionName string) (string, err
+func (s *Storage) getCollectionPath(collectionName string) (string, error) {
+	path := filepath.Join(s.DataRootDirectory, 

@@ -72,4 +72,5 @@ func (s *Storage) getCollectionPath(collectionName string) (string, error) {
 	return path, nil
 }
 
-// getCurrentDatafilePath 
+// getCurrentDatafilePath gets the path of the current data file
+func (s *

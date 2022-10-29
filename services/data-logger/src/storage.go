@@ -75,4 +75,8 @@ func (s *Storage) getCollectionPath(collectionName string) (string, error) {
 // getCurrentDatafilePath gets the path of the current data file
 func (s *Storage) getCurrentDatafilePath(collectionName string) (string, error) {
 	collectionPath, err := s.getCollectionPath(collectionName)
-	i
+	if err != nil {
+		return "", err
+	}
+
+	cu

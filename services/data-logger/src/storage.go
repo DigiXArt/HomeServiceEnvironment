@@ -84,4 +84,5 @@ func (s *Storage) getCurrentDatafilePath(collectionName string) (string, error) 
 	return filepath.Join(collectionPath, currentDataFileName), nil
 }
 
-// getDataFilePathsInRange get's
+// getDataFilePathsInRange get's all path of the data files of a collection
+// u

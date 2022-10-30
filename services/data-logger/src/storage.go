@@ -79,4 +79,4 @@ func (s *Storage) getCurrentDatafilePath(collectionName string) (string, error) 
 		return "", err
 	}
 
-	cu
+	currentDataFileName := fmt.Sprintf("%v.%v", time.Now

@@ -81,4 +81,7 @@ func (s *Storage) getCurrentDatafilePath(collectionName string) (string, error) 
 
 	currentDataFileName := fmt.Sprintf("%v.%v", time.Now().UTC().Format("2006-01-02"), "json")
 
-	return filepath.Join(collectionPath, currentDataFileNa
+	return filepath.Join(collectionPath, currentDataFileName), nil
+}
+
+// getDataFilePathsInRange get's

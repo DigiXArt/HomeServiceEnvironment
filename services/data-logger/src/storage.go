@@ -79,4 +79,6 @@ func (s *Storage) getCurrentDatafilePath(collectionName string) (string, error) 
 		return "", err
 	}
 
-	currentDataFileName := fmt.Sprintf("%v.%v", time.Now
+	currentDataFileName := fmt.Sprintf("%v.%v", time.Now().UTC().Format("2006-01-02"), "json")
+
+	return filepa

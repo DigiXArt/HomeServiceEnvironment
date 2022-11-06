@@ -90,4 +90,4 @@ func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.
 	dataFilePaths := make([]string, 0)
 
 	// truncate time part to 00:00:00
-	
+	currentDate := startDate.Truncate(24 

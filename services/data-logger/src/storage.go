@@ -88,3 +88,6 @@ func (s *Storage) getCurrentDatafilePath(collectionName string) (string, error) 
 // used in a given time range.
 func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.Time, endDate time.Time) ([]string, error) {
 	dataFilePaths := make([]string, 0)
+
+	// truncate time part to 00:00:00
+	

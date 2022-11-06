@@ -86,4 +86,4 @@ func (s *Storage) getCurrentDatafilePath(collectionName string) (string, error) 
 
 // getDataFilePathsInRange get's all path of the data files of a collection
 // used in a given time range.
-func (s *Sto
+func (s *Storage) getDataFilePathsInRange(collectionName string, st

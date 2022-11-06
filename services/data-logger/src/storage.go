@@ -86,4 +86,5 @@ func (s *Storage) getCurrentDatafilePath(collectionName string) (string, error) 
 
 // getDataFilePathsInRange get's all path of the data files of a collection
 // used in a given time range.
-func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.Time, endDate time.Time) ([]string, error) 
+func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.Time, endDate time.Time) ([]string, error) {
+	dataFilePaths := make([]string, 0)

@@ -91,4 +91,7 @@ func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.
 
 	// truncate time part to 00:00:00
 	currentDate := startDate.Truncate(24 * time.Hour)
-	limitDate := endDate.Truncate(24 * time.Ho
+	limitDate := endDate.Truncate(24 * time.Hour)
+
+	// get collaction path
+	collect

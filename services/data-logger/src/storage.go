@@ -94,4 +94,4 @@ func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.
 	limitDate := endDate.Truncate(24 * time.Hour)
 
 	// get collaction path
-	collect
+	collectionPath, err := s.getCollectionPath(co

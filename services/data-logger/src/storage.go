@@ -103,4 +103,5 @@ func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.
 		dataFilePaths = append(
 			dataFilePaths,
 			filepath.Join(
-				collectio
+				collectionPath,
+				fmt.Sprintf("%v.%v", currentDate.Forma

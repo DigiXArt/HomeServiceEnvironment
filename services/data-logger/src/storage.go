@@ -96,4 +96,7 @@ func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.
 	// get collaction path
 	collectionPath, err := s.getCollectionPath(collectionName)
 	if err != nil {
-		return dataFilePaths,
+		return dataFilePaths, err
+	}
+
+	for currentDate.Before(limitDate) || c

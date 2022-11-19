@@ -100,4 +100,7 @@ func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.
 	}
 
 	for currentDate.Before(limitDate) || currentDate.Equal(limitDate) {
-		dataFilePaths = append
+		dataFilePaths = append(
+			dataFilePaths,
+			filepath.Join(
+				collectio

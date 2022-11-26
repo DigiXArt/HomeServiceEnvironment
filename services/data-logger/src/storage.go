@@ -104,4 +104,7 @@ func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.
 			dataFilePaths,
 			filepath.Join(
 				collectionPath,
-				fmt.Sprintf("%v.%v", currentDate.Forma
+				fmt.Sprintf("%v.%v", currentDate.Format("2006-01-02"), "json"),
+			),
+		)
+

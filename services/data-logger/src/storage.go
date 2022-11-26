@@ -109,3 +109,9 @@ func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.
 		)
 
 		currentDate = currentDate.AddDate(0, 0, 1)
+	}
+
+	return dataFilePaths, nil
+}
+
+// fileExists checks i

@@ -114,4 +114,5 @@ func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.
 	return dataFilePaths, nil
 }
 
-// fileExists checks i
+// fileExists checks if a file exists
+func (s *Storage) fileExists(filePath s

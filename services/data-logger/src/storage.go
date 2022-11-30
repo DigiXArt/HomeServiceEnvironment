@@ -116,4 +116,6 @@ func (s *Storage) getDataFilePathsInRange(collectionName string, startDate time.
 
 // fileExists checks if a file exists
 func (s *Storage) fileExists(filePath string) bool {
-	info, err := os.Stat(fil
+	info, err := os.Stat(filePath)
+	if os.IsNotExist(err) {
+		return false

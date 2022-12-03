@@ -123,4 +123,4 @@ func (s *Storage) fileExists(filePath string) bool {
 	return !info.IsDir()
 }
 
-// readDataFi
+// readDataFile reads the content of a data file to a *DataFil

@@ -124,4 +124,7 @@ func (s *Storage) fileExists(filePath string) bool {
 }
 
 // readDataFile reads the content of a data file to a *DataFileContent
-func (s *Storage) readDataFile(dataFilePath string) (*DataFileContent, 
+func (s *Storage) readDataFile(dataFilePath string) (*DataFileContent, error) {
+	data := &DataFileContent{}
+
+	if s

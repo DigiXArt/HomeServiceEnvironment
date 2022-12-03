@@ -127,4 +127,5 @@ func (s *Storage) fileExists(filePath string) bool {
 func (s *Storage) readDataFile(dataFilePath string) (*DataFileContent, error) {
 	data := &DataFileContent{}
 
-	if s
+	if s.fileExists(dataFilePath) {
+		jsonFile, err := os.

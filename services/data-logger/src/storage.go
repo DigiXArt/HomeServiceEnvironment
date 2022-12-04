@@ -135,4 +135,8 @@ func (s *Storage) readDataFile(dataFilePath string) (*DataFileContent, error) {
 		defer jsonFile.Close()
 
 		byteValue, err := ioutil.ReadAll(jsonFile)
-		if err != 
+		if err != nil {
+			return nil, err
+		}
+
+		err = json.Unmarshal(

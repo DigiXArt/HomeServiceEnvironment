@@ -134,4 +134,5 @@ func (s *Storage) readDataFile(dataFilePath string) (*DataFileContent, error) {
 		}
 		defer jsonFile.Close()
 
-		byteValue, e
+		byteValue, err := ioutil.ReadAll(jsonFile)
+		if err != 

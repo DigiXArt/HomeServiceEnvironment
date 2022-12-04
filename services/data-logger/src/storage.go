@@ -128,4 +128,6 @@ func (s *Storage) readDataFile(dataFilePath string) (*DataFileContent, error) {
 	data := &DataFileContent{}
 
 	if s.fileExists(dataFilePath) {
-		jsonFile, err := os.
+		jsonFile, err := os.Open(dataFilePath)
+		if err != nil {
+			return 

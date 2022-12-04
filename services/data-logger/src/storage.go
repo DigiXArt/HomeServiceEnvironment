@@ -130,4 +130,8 @@ func (s *Storage) readDataFile(dataFilePath string) (*DataFileContent, error) {
 	if s.fileExists(dataFilePath) {
 		jsonFile, err := os.Open(dataFilePath)
 		if err != nil {
-			return 
+			return nil, err
+		}
+		defer jsonFile.Close()
+
+		byteValue, e

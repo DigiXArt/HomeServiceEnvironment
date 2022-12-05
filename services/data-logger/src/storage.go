@@ -141,4 +141,7 @@ func (s *Storage) readDataFile(dataFilePath string) (*DataFileContent, error) {
 
 		err = json.Unmarshal(byteValue, data)
 		if err != nil {
-			retur
+			return nil, err
+		}
+	} else {
+		data.It

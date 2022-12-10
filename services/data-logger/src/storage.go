@@ -147,4 +147,7 @@ func (s *Storage) readDataFile(dataFilePath string) (*DataFileContent, error) {
 		data.Items = make([]*Data, 0)
 	}
 
-	return data, n
+	return data, nil
+}
+
+// ReadData loads all data items of a colle

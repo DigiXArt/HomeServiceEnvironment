@@ -144,4 +144,7 @@ func (s *Storage) readDataFile(dataFilePath string) (*DataFileContent, error) {
 			return nil, err
 		}
 	} else {
-		data.It
+		data.Items = make([]*Data, 0)
+	}
+
+	return data, n

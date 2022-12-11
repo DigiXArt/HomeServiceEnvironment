@@ -150,4 +150,5 @@ func (s *Storage) readDataFile(dataFilePath string) (*DataFileContent, error) {
 	return data, nil
 }
 
-// ReadData loads all data items of a colle
+// ReadData loads all data items of a collection in a given time range
+func (s *Sto

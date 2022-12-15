@@ -151,4 +151,7 @@ func (s *Storage) readDataFile(dataFilePath string) (*DataFileContent, error) {
 }
 
 // ReadData loads all data items of a collection in a given time range
-func (s *Storage) ReadData(collectionName string, startDate time.Time, endDate time.Time) ([]
+func (s *Storage) ReadData(collectionName string, startDate time.Time, endDate time.Time) ([]*Data, error) {
+	result := make([]*Data, 0)
+
+	filePaths, err := 

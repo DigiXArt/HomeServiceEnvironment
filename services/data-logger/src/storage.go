@@ -156,4 +156,7 @@ func (s *Storage) ReadData(collectionName string, startDate time.Time, endDate t
 
 	filePaths, err := s.getDataFilePathsInRange(collectionName, startDate, endDate)
 	if err != nil {
-		return
+		return result, err
+	}
+
+	for _, df := range filePat

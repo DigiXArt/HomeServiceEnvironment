@@ -161,4 +161,6 @@ func (s *Storage) ReadData(collectionName string, startDate time.Time, endDate t
 
 	for _, df := range filePaths {
 		if s.fileExists(df) {
-			dfContent, er
+			dfContent, err := s.readDataFile(df)
+			if err != nil {
+				return 

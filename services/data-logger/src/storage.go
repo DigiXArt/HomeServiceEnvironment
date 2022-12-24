@@ -163,4 +163,7 @@ func (s *Storage) ReadData(collectionName string, startDate time.Time, endDate t
 		if s.fileExists(df) {
 			dfContent, err := s.readDataFile(df)
 			if err != nil {
-				return 
+				return result, err
+			}
+
+			result = append(resul

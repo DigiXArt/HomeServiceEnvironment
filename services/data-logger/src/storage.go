@@ -166,4 +166,11 @@ func (s *Storage) ReadData(collectionName string, startDate time.Time, endDate t
 				return result, err
 			}
 
-			result = append(result, dfContent.GetItemsInRange(startDate, endDat
+			result = append(result, dfContent.GetItemsInRange(startDate, endDate)...)
+		}
+	}
+
+	return result, nil
+}
+
+// wri

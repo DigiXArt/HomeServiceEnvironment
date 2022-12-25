@@ -173,4 +173,5 @@ func (s *Storage) ReadData(collectionName string, startDate time.Time, endDate t
 	return result, nil
 }
 
-// wri
+// writeDataFile writes a data file
+func (s *Storage) writeDataF

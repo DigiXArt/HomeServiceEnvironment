@@ -174,4 +174,4 @@ func (s *Storage) ReadData(collectionName string, startDate time.Time, endDate t
 }
 
 // writeDataFile writes a data file
-func (s *Storage) writeDataF
+func (s *Storage) writeDataFile(dataFilePath string, file []byte) e

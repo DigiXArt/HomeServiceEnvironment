@@ -174,4 +174,6 @@ func (s *Storage) ReadData(collectionName string, startDate time.Time, endDate t
 }
 
 // writeDataFile writes a data file
-func (s *Storage) writeDataFile(dataFilePath string, file []byte) e
+func (s *Storage) writeDataFile(dataFilePath string, file []byte) error {
+	s.MutexLock.Lock()
+	defer

@@ -178,4 +178,7 @@ func (s *Storage) writeDataFile(dataFilePath string, file []byte) error {
 	s.MutexLock.Lock()
 	defer s.MutexLock.Unlock()
 
-	return ioutil.WriteFile
+	return ioutil.WriteFile(dataFilePath, file, 0755)
+}
+
+// WriteData stores

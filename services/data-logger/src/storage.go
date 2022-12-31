@@ -181,4 +181,4 @@ func (s *Storage) writeDataFile(dataFilePath string, file []byte) error {
 	return ioutil.WriteFile(dataFilePath, file, 0755)
 }
 
-// WriteData stores
+// WriteData stores a new data item to a collection and retu

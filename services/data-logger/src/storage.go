@@ -183,4 +183,4 @@ func (s *Storage) writeDataFile(dataFilePath string, file []byte) error {
 
 // WriteData stores a new data item to a collection and returns it wrapped in a
 // *Data structure
-func (s *Storage) Wri
+func (s *Storage) WriteData(collectionName string, payload map[string]in

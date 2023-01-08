@@ -189,4 +189,4 @@ func (s *Storage) WriteData(collectionName string, payload map[string]interface{
 	}
 	data.Initialize()
 
-	dataFilePath, err
+	dataFilePath, err := s.getCurrentDatafilePath(collectionNa

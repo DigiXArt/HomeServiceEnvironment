@@ -194,4 +194,6 @@ func (s *Storage) WriteData(collectionName string, payload map[string]interface{
 		return data, err
 	}
 
-	dataFile, err
+	dataFile, err := s.readDataFile(dataFilePath)
+
+	dataFile.Ite

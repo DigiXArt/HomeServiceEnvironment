@@ -186,4 +186,7 @@ func (s *Storage) writeDataFile(dataFilePath string, file []byte) error {
 func (s *Storage) WriteData(collectionName string, payload map[string]interface{}) (*Data, error) {
 	data := &Data{
 		Payload: payload,
-	
+	}
+	data.Initialize()
+
+	dataFilePath, err

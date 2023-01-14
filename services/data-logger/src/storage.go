@@ -204,4 +204,7 @@ func (s *Storage) WriteData(collectionName string, payload map[string]interface{
 	}
 
 	err = s.writeDataFile(dataFilePath, file)
-	
+	if err != nil {
+		return data, err
+	}
+

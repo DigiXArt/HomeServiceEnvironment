@@ -200,4 +200,8 @@ func (s *Storage) WriteData(collectionName string, payload map[string]interface{
 
 	file, err := json.Marshal(dataFile)
 	if err != nil {
-		return data, 
+		return data, err
+	}
+
+	err = s.writeDataFile(dataFilePath, file)
+	

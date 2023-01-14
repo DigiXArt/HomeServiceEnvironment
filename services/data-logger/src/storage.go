@@ -198,4 +198,6 @@ func (s *Storage) WriteData(collectionName string, payload map[string]interface{
 
 	dataFile.Items = append(dataFile.Items, data)
 
-	file, er
+	file, err := json.Marshal(dataFile)
+	if err != nil {
+		return data, 

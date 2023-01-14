@@ -196,4 +196,6 @@ func (s *Storage) WriteData(collectionName string, payload map[string]interface{
 
 	dataFile, err := s.readDataFile(dataFilePath)
 
-	dataFile.Ite
+	dataFile.Items = append(dataFile.Items, data)
+
+	file, er

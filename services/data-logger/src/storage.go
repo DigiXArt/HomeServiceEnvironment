@@ -212,4 +212,5 @@ func (s *Storage) WriteData(collectionName string, payload map[string]interface{
 }
 
 // ListCollections return all available collections
-func (s *Storage) ListCollections()
+func (s *Storage) ListCollections() ([]string, error) {
+	collections := make([]st

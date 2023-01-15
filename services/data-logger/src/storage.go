@@ -211,4 +211,5 @@ func (s *Storage) WriteData(collectionName string, payload map[string]interface{
 	return data, nil
 }
 
-// ListCollections return all available collecti
+// ListCollections return all available collections
+func (s *Storage) ListCollections()

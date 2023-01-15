@@ -208,3 +208,7 @@ func (s *Storage) WriteData(collectionName string, payload map[string]interface{
 		return data, err
 	}
 
+	return data, nil
+}
+
+// ListColle

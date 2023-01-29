@@ -213,4 +213,6 @@ func (s *Storage) WriteData(collectionName string, payload map[string]interface{
 
 // ListCollections return all available collections
 func (s *Storage) ListCollections() ([]string, error) {
-	collections := make([]st
+	collections := make([]string, 0)
+
+	dirContent, err := ioutil.ReadDir(s

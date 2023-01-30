@@ -217,4 +217,7 @@ func (s *Storage) ListCollections() ([]string, error) {
 
 	dirContent, err := ioutil.ReadDir(s.DataRootDirectory)
 	if err != nil {
-		return
+		return collections, err
+	}
+
+	for _, item := ra

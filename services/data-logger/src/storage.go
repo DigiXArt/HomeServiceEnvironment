@@ -220,4 +220,6 @@ func (s *Storage) ListCollections() ([]string, error) {
 		return collections, err
 	}
 
-	for _, item := ra
+	for _, item := range dirContent {
+		if item.IsDir() {
+			co

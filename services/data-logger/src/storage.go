@@ -222,4 +222,9 @@ func (s *Storage) ListCollections() ([]string, error) {
 
 	for _, item := range dirContent {
 		if item.IsDir() {
-			collections = append(collections, item.N
+			collections = append(collections, item.Name())
+		}
+	}
+
+	return collections, nil
+}

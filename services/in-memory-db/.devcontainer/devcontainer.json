@@ -1,3 +1,4 @@
 {
 	"name": "In Memory DB Service",
-	"dockerFil
+	"dockerFile": "../Dockerfile",
+	"runArgs": [ "--cap-add=

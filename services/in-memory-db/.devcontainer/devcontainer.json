@@ -1,4 +1,6 @@
 {
 	"name": "In Memory DB Service",
 	"dockerFile": "../Dockerfile",
-	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unco
+	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined", "--expose=7000" ],
+
+	// Use 'appPort' to create a

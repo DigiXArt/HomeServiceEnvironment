@@ -16,4 +16,5 @@
 		"go.useLanguageServer": true
 	},
 
-	// Uncomment the next line to run commands after the 
+	// Uncomment the next line to run commands after the container is created.
+	// "postCreateCo

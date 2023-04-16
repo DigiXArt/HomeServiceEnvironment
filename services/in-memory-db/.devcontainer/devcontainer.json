@@ -20,4 +20,6 @@
 	// "postCreateCommand": "go version",
 
 	// Comment out the next line to run as root
-	// "remoteUser": "service-
+	// "remoteUser": "service-user",
+
+	// Add the IDs of extensions you want installe

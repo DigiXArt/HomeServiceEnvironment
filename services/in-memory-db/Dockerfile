@@ -6,4 +6,7 @@ RUN apk add --no-cache git gcc libc-dev
 RUN go get golang.org/x/tools/gopls
 RUN go get github.com/go-delve/delve/cmd/dlv
 
-# Set the Current Working
+# Set the Current Working Directory inside the container
+WORKDIR /app
+
+# We want to 

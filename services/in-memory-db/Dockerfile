@@ -9,4 +9,8 @@ RUN go get github.com/go-delve/delve/cmd/dlv
 # Set the Current Working Directory inside the container
 WORKDIR /app
 
-# We want to populate the module cache based on the go.{m
+# We want to populate the module cache based on the go.{mod,sum} files.
+COPY go.mod .
+COPY go.sum .
+
+RUN go mod d

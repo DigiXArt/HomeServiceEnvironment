@@ -20,4 +20,5 @@ COPY ./src/. ./src
 # Build the Go app
 RUN go build -o ./app/server ./src/.
 
-# Run 
+# Run the binary
+CMD ["./app/server"]

@@ -18,4 +18,6 @@ RUN go mod download
 COPY ./src/. ./src
 
 # Build the Go app
-RUN
+RUN go build -o ./app/server ./src/.
+
+# Run 

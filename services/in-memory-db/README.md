@@ -101,3 +101,11 @@ This example gets all keys in realm "myrealm".
 ```
 curl -i http://localhost:7000/myrealm/keys   
 ```
+
+#### GET Realms 
+Gets all realms.
+
+This example gets all realms.
+```
+curl -i http://localhost:7000/realms  
+```

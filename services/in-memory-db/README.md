@@ -46,3 +46,58 @@ Description and examples (cUrl) of all API calls and models of this service.
 {
         "keys":["key1", "key2", ...]
 }
+```
+
+#### Realm List
+```json
+{
+        "realms":["realm1", "realm2", ...]
+}
+```
+
+#### Error
+```json
+{
+        "error":{
+                "message":"No value found for key myrealm/myke",
+                "status":404,
+                "code":3
+                }
+}
+```
+
+### Methods
+#### SET
+Sets a value in given realm using given key.
+
+This example sets "a value as string" in realm "myrealm" using key "mykey".
+```
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"value":"a value as string", "expires-in": 180}' \
+  http://localhost:7000/myrealm/mykey
+```
+
+#### GET
+Gets a value in given realm by given key.
+
+This example gets the value of key "meykey" in realm "myrealm".
+```
+curl -i http://localhost:7000/myrealm/mykey
+```
+
+#### DELETE
+Deletes a value in given realm using given key.
+
+This example deletes the value in realm "myrealm" with the key "mykey".
+```
+curl --request DELETE http://localhost:7000/myrealm/mykey
+```
+
+#### GET Keys 
+Gets all keys in a given realm.
+
+This example gets all keys in realm "myrealm".
+```
+curl -i http://localhost:7000/myrealm/keys   
+```

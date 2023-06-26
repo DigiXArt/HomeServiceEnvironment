@@ -167,3 +167,9 @@ func (a *API) Realms(w http.ResponseWriter, r *http.Request) {
 	realms := a.Storage.Realms()
 	keysMessage := RealmListMessageType{
 		Realms: realms,
+	}
+
+	w.Header().Add("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(keysMessage)
+}

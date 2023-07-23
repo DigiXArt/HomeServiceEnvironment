@@ -6,4 +6,6 @@ Defines all error types and messages of the the RESTful API.
 
 MIT License
 
-Copyright (c
+Copyright (c) 2020 Bruno Hautzenberger
+
+Permission is hereby grant

@@ -34,4 +34,4 @@ import (
 	"net/http"
 )
 
-// 
+// ErrorCode defines all possible errors co

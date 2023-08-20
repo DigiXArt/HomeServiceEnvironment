@@ -41,4 +41,5 @@ const (
 	ErrorCodeInternal           ErrorCode = 0
 	ErrorCodeRealmMissing                 = 1
 	ErrorCodeKeyMissing                   = 2
-	ErrorCodeEntityNo
+	ErrorCodeEntityNotFound               = 3
+	ErrorCodeInvalidR

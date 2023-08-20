@@ -40,4 +40,5 @@ type ErrorCode int
 const (
 	ErrorCodeInternal           ErrorCode = 0
 	ErrorCodeRealmMissing                 = 1
-	ErrorCodeKeyMissing    
+	ErrorCodeKeyMissing                   = 2
+	ErrorCodeEntityNo

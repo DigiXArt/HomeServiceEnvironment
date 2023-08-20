@@ -42,4 +42,7 @@ const (
 	ErrorCodeRealmMissing                 = 1
 	ErrorCodeKeyMissing                   = 2
 	ErrorCodeEntityNotFound               = 3
-	ErrorCodeInvalidR
+	ErrorCodeInvalidRequestBody           = 4
+)
+
+// Error

@@ -38,4 +38,5 @@ import (
 type ErrorCode int
 
 const (
-	Err
+	ErrorCodeInternal           ErrorCode = 0
+	ErrorCodeRealm

@@ -52,4 +52,4 @@ type ErrorMessage struct {
 	Code       ErrorCode `json:"code"`
 }
 
-//
+// RaiseError logs and returns a given error via on the

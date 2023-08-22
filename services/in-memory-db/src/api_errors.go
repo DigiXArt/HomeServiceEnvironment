@@ -53,4 +53,6 @@ type ErrorMessage struct {
 }
 
 // RaiseError logs and returns a given error via on the current http request
-func RaiseError(w http.ResponseWriter, message string, statusCode int, code E
+func RaiseError(w http.ResponseWriter, message string, statusCode int, code ErrorCode) {
+	errorMessage := ErrorMessage{
+		Mes

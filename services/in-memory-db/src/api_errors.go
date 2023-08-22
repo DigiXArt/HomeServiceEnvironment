@@ -45,4 +45,5 @@ const (
 	ErrorCodeInvalidRequestBody           = 4
 )
 
-// Error
+// ErrorMessage holds all information of a certain error
+type Er

@@ -46,4 +46,5 @@ const (
 )
 
 // ErrorMessage holds all information of a certain error
-type Er
+type ErrorMessage struct {
+	Message    string    `

@@ -66,4 +66,6 @@ func RaiseError(w http.ResponseWriter, message string, statusCode int, code Erro
 		Error: errorMessage,
 	}
 
-	w.Header().Add("Content-Type", "application/jso
+	w.Header().Add("Content-Type", "application/json")
+	w.WriteHeader(statusCode)
+	jso

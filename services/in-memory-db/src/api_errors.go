@@ -56,4 +56,8 @@ type ErrorMessage struct {
 func RaiseError(w http.ResponseWriter, message string, statusCode int, code ErrorCode) {
 	errorMessage := ErrorMessage{
 		Message:    message,
-		StatusCode: status
+		StatusCode: statusCode,
+		Code:       code,
+	}
+
+	log.Printf("Error: %

@@ -48,3 +48,46 @@ type StorageInterface interface {
 //Implements StorageInterface
 type Storage struct {
 	Data map[string]map[string]*Value
+}
+
+//Initialize creates an empty map[string]map[string]*Value (REALM->KEY->VALUE),
+//which will be used to save to store all the data.
+func (s *Storage) Initialize() {
+	s.Data = make(map[string]map[string]*Value)
+}
+
+//GetRealm returns all data of an existing realm as map[string]*Value
+func (s *Storage) GetRealm(realm string) (bool, map[string]*Value) {
+	if _, ok := s.Data[realm]; ok {
+		return true, s.Data[realm]
+	}
+
+	return false, make(map[string]*Value)
+}
+
+//CreateRealm creates a new realm, if it does not exist already and
+//returns it.
+func (s *Storage) CreateRealm(realm string) map[string]*Value {
+	if _, ok := s.Data[realm]; ok {
+		return s.Data[realm]
+	}
+
+	s.Data[realm] = make(map[string]*Value)
+
+	return s.Data[realm]
+}
+
+//CleanEmptyRealm removes all empty realms, because there is no need to
+//keep empty storage spaces.
+func (s *Storage) CleanEmptyRealm(realmName string) {
+	if realm, ok := s.Data[realmName]; ok {
+		if len(realm) == 0 {
+			delete(s.Data, realmName)
+		}
+	}
+}
+
+//Get loads a single Value identified by realm and key.
+//First bool return value determines, if a Value with these identifiers
+//was found, if false Valiue will be nil.
+func (s *Storage) Get(realmName string, key string) (bool, *Value) {

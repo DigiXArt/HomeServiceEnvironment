@@ -78,3 +78,7 @@ func main() {
 	r.HandleFunc("/{realm}/{key}", api.Get).Methods("GET")
 	r.HandleFunc("/{realm}/{key}", api.Set).Methods("POST")
 	r.HandleFunc("/{realm}/{key}", api.Delete).Methods("DELETE")
+
+	// Bind to a port and pass our router in
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", os.Getenv("PORT")), r))
+}

@@ -91,3 +91,43 @@ func (s *Storage) CleanEmptyRealm(realmName string) {
 //First bool return value determines, if a Value with these identifiers
 //was found, if false Valiue will be nil.
 func (s *Storage) Get(realmName string, key string) (bool, *Value) {
+	ok, realm := s.GetRealm(realmName)
+	if !ok {
+		return false, nil
+	}
+
+	if val, ok := realm[key]; ok {
+		return true, val
+	}
+
+	return false, nil
+}
+
+//Set creates or replaces a Value, identified by given realm and key,
+//and deletes it, using a go routine that is delayed by given expiration
+//time.
+func (s *Storage) Set(realmName string, key string, value *Value) {
+	ok, realm := s.GetRealm(realmName)
+	if !ok {
+		realm = s.CreateRealm(realmName)
+	}
+
+	realm[key] = value
+
+	expiresIn := (int)(value.ExpiresAt.Sub(time.Now().UTC()).Seconds())
+
+	expireFunc := func() {
+		delete(realm, key)
+		s.CleanEmptyRealm(realmName)
+		log.Printf("Deleted key %v after %v seconds\n", key, expiresIn)
+	}
+
+	time.AfterFunc(time.Duration(expiresIn)*time.Second, expireFunc)
+	log.Printf("Set key %v. It will Expire in %v seconds\n", key, expiresIn)
+}
+
+//Delete deletes a Value, identified by given realm and key.
+//It returns false, if the was no value matching these identifiers.
+func (s *Storage) Delete(realmName string, key string) bool {
+	ok, realm := s.GetRealm(realmName)
+	if !ok {

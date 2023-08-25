@@ -131,3 +131,40 @@ func (s *Storage) Set(realmName string, key string, value *Value) {
 func (s *Storage) Delete(realmName string, key string) bool {
 	ok, realm := s.GetRealm(realmName)
 	if !ok {
+		return false
+	}
+
+	if _, ok := realm[key]; ok {
+		delete(realm, key)
+		s.CleanEmptyRealm(realmName)
+		return true
+	}
+
+	return false
+}
+
+//Keys returns all keys in a realm. It returns an empty list
+//if the realm does not exist.
+func (s *Storage) Keys(realmName string) []string {
+	ok, realm := s.GetRealm(realmName)
+	if !ok {
+		return make([]string, 0)
+	}
+
+	keys := make([]string, 0, len(realm))
+	for k := range realm {
+		keys = append(keys, k)
+	}
+
+	return keys
+}
+
+//Realms returns all realm names.
+func (s *Storage) Realms() []string {
+	keys := make([]string, 0, len(s.Data))
+	for k := range s.Data {
+		keys = append(keys, k)
+	}
+
+	return keys
+}

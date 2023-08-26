@@ -8,4 +8,6 @@ a value is served via the API.
 
 MIT License
 
-Copyright (c) 202
+Copyright (c) 2020 Bruno Hautzenberger
+
+Permission is hereby granted, free of charge

@@ -36,4 +36,4 @@ import (
 	"time"
 )
 
-// Values i
+// Values implements a single key/value instance,

@@ -36,4 +36,6 @@ import (
 	"time"
 )
 
-// Values implements a single key/value instance,
+// Values implements a single key/value instance, which is saved to the key/value
+// storage.
+type

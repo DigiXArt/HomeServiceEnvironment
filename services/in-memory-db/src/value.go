@@ -38,4 +38,6 @@ import (
 
 // Values implements a single key/value instance, which is saved to the key/value
 // storage.
-type
+type Value struct {
+	Value     string
+	ExpiresAt tim

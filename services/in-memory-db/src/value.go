@@ -40,4 +40,7 @@ import (
 // storage.
 type Value struct {
 	Value     string
-	ExpiresAt tim
+	ExpiresAt time.Time
+}
+
+//ToValueMessageType transforms 

@@ -43,4 +43,4 @@ type Value struct {
 	ExpiresAt time.Time
 }
 
-//ToValueMessageType transforms 
+//ToValueMessageType transforms a Value instance to a ValueMessageType that ca

@@ -45,4 +45,5 @@ type Value struct {
 
 //ToValueMessageType transforms a Value instance to a ValueMessageType that can
 //be converted to json and served via the api. It also takes care of setting the
-//right re
+//right remaining expire time in seconds.
+func (v *Value) ToValu

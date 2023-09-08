@@ -47,4 +47,6 @@ type Value struct {
 //be converted to json and served via the api. It also takes care of setting the
 //right remaining expire time in seconds.
 func (v *Value) ToValueMessageType() ValueMessageType {
-	return ValueMessa
+	return ValueMessageType{
+		Value:     v.Value,
+		ExpiresIn: (int)

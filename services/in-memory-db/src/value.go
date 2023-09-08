@@ -50,3 +50,7 @@ func (v *Value) ToValueMessageType() ValueMessageType {
 	return ValueMessageType{
 		Value:     v.Value,
 		ExpiresIn: (int)(v.ExpiresAt.Sub(time.Now().UTC()).Seconds()),
+	}
+}
+
+//ValueFromValueMessageType creates a Value from 

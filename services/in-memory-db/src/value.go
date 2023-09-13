@@ -56,4 +56,6 @@ func (v *Value) ToValueMessageType() ValueMessageType {
 //ValueFromValueMessageType creates a Value from the JSON message in the
 //request body and converts the given seconds into a time instance.
 func ValueFromValueMessageType(body io.ReadCloser) (*Value, error) {
-	msg := ValueMessag
+	msg := ValueMessageType{}
+
+	err := json.NewDecoder(body).Decode

@@ -61,3 +61,7 @@ func ValueFromValueMessageType(body io.ReadCloser) (*Value, error) {
 	err := json.NewDecoder(body).Decode(&msg)
 	if err != nil {
 		return nil, err
+	}
+
+	value := &Value{
+		Value:     msg.V

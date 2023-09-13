@@ -58,4 +58,6 @@ func (v *Value) ToValueMessageType() ValueMessageType {
 func ValueFromValueMessageType(body io.ReadCloser) (*Value, error) {
 	msg := ValueMessageType{}
 
-	err := json.NewDecoder(body).Decode
+	err := json.NewDecoder(body).Decode(&msg)
+	if err != nil {
+		return nil, err

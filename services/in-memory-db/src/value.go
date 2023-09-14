@@ -64,4 +64,5 @@ func ValueFromValueMessageType(body io.ReadCloser) (*Value, error) {
 	}
 
 	value := &Value{
-		Value:     msg.V
+		Value:     msg.Value,
+		ExpiresAt: time.Now().UTC().Add(time.Duration(msg.Expir

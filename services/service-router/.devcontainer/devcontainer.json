@@ -1,3 +1,4 @@
 {
 	"name": "Service Router Service",
-	"dockerFile": ".
+	"dockerFile": "../Dockerfile",
+	"runArgs": [ "--cap-add=SYS_PTRACE

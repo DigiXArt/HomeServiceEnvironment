@@ -12,4 +12,8 @@
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/sh",
 		"go.gopath": "/go",
-		"go.inferGopath": tr
+		"go.inferGopath": true,
+		"go.useLanguageServer": true
+	},
+
+	// Uncommen

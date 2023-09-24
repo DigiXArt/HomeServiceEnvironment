@@ -19,4 +19,7 @@
 	// Uncomment the next line to run commands after the container is created.
 	// "postCreateCommand": "go version",
 
-	// Comment out the next line to run as ro
+	// Comment out the next line to run as root
+	// "remoteUser": "service-user",
+
+	// Add the IDs 

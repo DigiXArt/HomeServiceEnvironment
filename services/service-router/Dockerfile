@@ -11,3 +11,14 @@ RUN go get github.com/go-delve/delve/cmd/dlv
 WORKDIR /app
 
 # We want to populate the module cache based on the go.{mod,sum} files.
+COPY go.mod .
+
+RUN go mod download
+
+COPY ./src/. ./src
+
+# Build the Go app
+RUN go build -o ./app/server ./src/.
+
+# Run the binary
+CMD ["./app/server"]

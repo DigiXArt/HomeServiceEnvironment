@@ -1,3 +1,3 @@
 # SERVICE-ROUTER
 
-service-route
+service-router is a service that can be used to route requests based on X-TargetService

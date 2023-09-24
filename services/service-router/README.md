@@ -2,4 +2,5 @@
 
 service-router is a service that can be used to route requests based on X-TargetService
 header.
-It is basically a reverse proxy used to 
+It is basically a reverse proxy used to route requests to a service without the need to
+kn

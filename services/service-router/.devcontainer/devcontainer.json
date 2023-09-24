@@ -23,4 +23,7 @@
 	// "remoteUser": "service-user",
 
 	// Add the IDs of extensions you want installed when the container is created in the array below.
-	"e
+	"extensions": [
+		"ms-vscode.go"
+	]
+}

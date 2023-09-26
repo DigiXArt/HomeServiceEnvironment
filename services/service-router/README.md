@@ -5,4 +5,4 @@ header.
 It is basically a reverse proxy used to route requests to a service without the need to
 know about the service's address or port. In this context it is used for services to call
 each other by name (X-TargetService header).
-This allows u
+This allows us to quickly swap services, redeploy them somewhere e

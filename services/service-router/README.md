@@ -7,4 +7,4 @@ know about the service's address or port. In this context it is used for service
 each other by name (X-TargetService header).
 This allows us to quickly swap services, redeploy them somewhere else and stuff like that,
 without the need of having to reconfigure all other services that rely on them.
-Services always call this servi
+Services always call this service with X-TargetService header set, to req

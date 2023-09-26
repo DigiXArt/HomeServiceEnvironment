@@ -6,4 +6,5 @@ It is basically a reverse proxy used to route requests to a service without the 
 know about the service's address or port. In this context it is used for services to call
 each other by name (X-TargetService header).
 This allows us to quickly swap services, redeploy them somewhere else and stuff like that,
-without the need of having to reconfigure all other services
+without the need of having to reconfigure all other services that rely on them.
+Services always call this servi

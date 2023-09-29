@@ -14,4 +14,5 @@ Path, request body and headers will be forwarded as well.
 Service mapping is configured using env vars.
 * "SERVICE-NAME": "ADDRESS"
 
-This allows us to deploy multiple copies of this 
+This allows us to deploy multiple copies of this router using different target services
+for the same na

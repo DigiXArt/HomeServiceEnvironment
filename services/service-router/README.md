@@ -14,3 +14,4 @@ Path, request body and headers will be forwarded as well.
 Service mapping is configured using env vars.
 * "SERVICE-NAME": "ADDRESS"
 
+This allows us to deploy multiple copies of this 

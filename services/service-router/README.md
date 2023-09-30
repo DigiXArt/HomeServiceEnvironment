@@ -15,4 +15,4 @@ Service mapping is configured using env vars.
 * "SERVICE-NAME": "ADDRESS"
 
 This allows us to deploy multiple copies of this router using different target services
-for the same na
+for the same name. That way we could easily build a test envi

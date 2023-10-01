@@ -19,4 +19,4 @@ for the same name. That way we could easily build a test environment for certain
 or do A/B testing and stuff liek that.
 
 ## Development
-This service is
+This service is developed using Visual Studio Code and requires the fo

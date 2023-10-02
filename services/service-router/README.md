@@ -28,4 +28,4 @@ This service is developed using Visual Studio Code and requires the following ex
 This command runs the service on port 6000 and route two services by setting their target env vars,
 TESTHOST_A and TESTHOST_B.
 ```
-docker run -d -p 6000:6000 --name service-router -e PORT='60
+docker run -d -p 6000:6000 --name service-router -e PORT='6000' -e TESTHOST_A:'http://localhost:8080

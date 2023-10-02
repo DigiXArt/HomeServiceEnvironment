@@ -21,4 +21,8 @@ or do A/B testing and stuff liek that.
 ## Development
 This service is developed using Visual Studio Code and requires the following extensions:
 * Docker
-* Remote-
+* Remote-Containers
+* Go
+
+## Deployment
+This command run

@@ -25,4 +25,5 @@ This service is developed using Visual Studio Code and requires the following ex
 * Go
 
 ## Deployment
-This command runs the service on port 6000 and route two s
+This command runs the service on port 6000 and route two services by setting their target env vars,
+T

@@ -33,4 +33,5 @@ docker run -d -p 6000:6000 --name service-router -e PORT='6000' -e TESTHOST_A:'h
 
 ## Usage
 To use the router just call this service as you would call the service you need and set header to 
-the service name of the target service
+the service name of the target service, as specified in the router'S env vars.
+```

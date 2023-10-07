@@ -91,3 +91,27 @@ func serveProxy(targetUrl string, w http.ResponseWriter, r *http.Request) error 
 
 // handleRedirect handles all incoming requests. It reads X-TargetService
 // header to determine which target service to use and then proceeds to start
+// a proxy using serveProxy function.
+func handleRedirect(w http.ResponseWriter, r *http.Request) {
+	targetName := r.Header.Get("X-TargetService")
+	if len(targetName) == 0 {
+		RaiseError(w, "Missing X-TargetService", http.StatusBadRequest, ErrorCodeMissingTargetServiceName)
+		return
+	}
+
+	targetUrl, err := getTargetUrl(targetName)
+	if err != nil {
+		RaiseError(w, fmt.Sprintf("No service specified for target %v", targetName), http.StatusBadRequest, ErrorCodeUnknownTargetService)
+		return
+	}
+
+	serveProxy(targetUrl, w, r)
+}
+
+// main is the main entrypoint of the service. It starts the server on PORT
+// specified in env vars and routes everthing to handleRedirect.
+func main() {
+	// Serve router
+	http.HandleFunc("/", handleRedirect)
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", os.Getenv("PORT")), nil))
+}

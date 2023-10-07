@@ -43,3 +43,51 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+
+package main
+
+import (
+	"errors"
+	"fmt"
+	"log"
+	"net/http"
+	"net/http/httputil"
+	"net/url"
+	"os"
+	"strings"
+)
+
+// getTargetUrl tries to get the target URL specified for given service name.
+// returns an error if there is no service configured for given target name.
+func getTargetUrl(targetName string) (string, error) {
+	cleanTargetName := strings.ToUpper(strings.TrimSpace(targetName))
+
+	if targetUrl, ok := os.LookupEnv(cleanTargetName); ok {
+		return targetUrl, nil
+	}
+
+	return "", errors.New(fmt.Sprintf("No target specified for '%v'", cleanTargetName))
+}
+
+// serveProxy starts the - non-blocking - reverse proxy for the current request
+func serveProxy(targetUrl string, w http.ResponseWriter, r *http.Request) error {
+	url, err := url.Parse(targetUrl)
+	if err != nil {
+		return err
+	}
+
+	proxy := httputil.NewSingleHostReverseProxy(url)
+
+	r.URL.Host = url.Host
+	r.URL.Scheme = url.Scheme
+	r.Header.Set("X-Forwarded-Host", r.Header.Get("Host"))
+	r.Host = url.Host
+
+	//non blocking
+	proxy.ServeHTTP(w, r)
+
+	return nil
+}
+
+// handleRedirect handles all incoming requests. It reads X-TargetService
+// header to determine which target service to use and then proceeds to start

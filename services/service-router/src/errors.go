@@ -73,3 +73,4 @@ func RaiseError(w http.ResponseWriter, message string, statusCode int, code Erro
 	w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(statusCode)
 	json.NewEncoder(w).Encode(response)
+}

@@ -1,3 +1,4 @@
 {
 	"name": "Test HTTP Receiver Service",
-	"dockerFile": "../Docker
+	"dockerFile": "../Dockerfile",
+	"runArgs": [ "--cap-add=SYS_PTRACE", "--s

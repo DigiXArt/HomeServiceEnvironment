@@ -5,4 +5,6 @@
 
 	// Use 'appPort' to create a container with published ports. If the port isn't working, be sure
 	// your server accepts connections from all interfaces (0.0.0.0 or '*'), not just localhost.
-	"a
+	"appPort": [8080],
+
+	// Use 'settings' to set *defaul

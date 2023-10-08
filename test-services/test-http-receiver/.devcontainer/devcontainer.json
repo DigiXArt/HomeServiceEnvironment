@@ -7,4 +7,4 @@
 	// your server accepts connections from all interfaces (0.0.0.0 or '*'), not just localhost.
 	"appPort": [8080],
 
-	// Use 'settings' to set *defaul
+	// Use 'settings' to set *default* container specific settings.json values on container 

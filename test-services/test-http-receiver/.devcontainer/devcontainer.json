@@ -13,4 +13,7 @@
 		"terminal.integrated.shell.linux": "/bin/sh",
 		"go.gopath": "/go",
 		"go.inferGopath": true,
-		"
+		"go.useLanguageServer": true
+	},
+
+	// Uncomment t

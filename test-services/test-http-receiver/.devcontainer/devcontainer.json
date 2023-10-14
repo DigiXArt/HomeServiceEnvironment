@@ -17,4 +17,6 @@
 	},
 
 	// Uncomment the next line to run commands after the container is created.
-	// "postCreateCommand": "g
+	// "postCreateCommand": "go version",
+
+	// Comment out the next line to run a

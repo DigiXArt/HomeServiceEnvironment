@@ -5,4 +5,9 @@ body.
 
 ## Development
 This service is developed using Visual Studio Code and requires the following extensions:
-*
+* Docker
+* Remote-Containers
+* Go
+
+## Deployment
+Thi

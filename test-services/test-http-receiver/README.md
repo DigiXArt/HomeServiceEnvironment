@@ -11,4 +11,5 @@ This service is developed using Visual Studio Code and requires the following ex
 
 ## Deployment
 This command runs the service on port 8080.
-`
+```
+docker run -d -p 8080:8080 --name test-h

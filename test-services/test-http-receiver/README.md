@@ -17,4 +17,7 @@ docker run -d -p 8080:8080 --name test-http-receiver -e PORT='8080' -v /var/run/
 
 ### Methods
 #### GET 
-A Tes
+A TestEndpoint for GET requests.
+
+```
+curl -i htt

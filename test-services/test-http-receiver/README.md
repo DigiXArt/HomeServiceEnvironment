@@ -20,4 +20,7 @@ docker run -d -p 8080:8080 --name test-http-receiver -e PORT='8080' -v /var/run/
 A TestEndpoint for GET requests.
 
 ```
-curl -i htt
+curl -i http://localhost:8080/get -H "X-TestHeader: 123"
+ 
+```
+

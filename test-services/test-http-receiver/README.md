@@ -28,4 +28,6 @@ curl -i http://localhost:8080/get -H "X-TestHeader: 123"
 A TestEndpoint for POST requests.
 
 ```
-curl --header "Content-Type: application/json" 
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"valueA":"some c

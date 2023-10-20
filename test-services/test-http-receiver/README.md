@@ -30,4 +30,5 @@ A TestEndpoint for POST requests.
 ```
 curl --header "Content-Type: application/json" \
   --request POST \
-  --data '{"valueA":"some c
+  --data '{"valueA":"some custom value", "valueB": 42}' \
+  http://

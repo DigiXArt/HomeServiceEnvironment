@@ -24,3 +24,8 @@ curl -i http://localhost:8080/get -H "X-TestHeader: 123"
  
 ```
 
+#### POST
+A TestEndpoint for POST requests.
+
+```
+curl --h

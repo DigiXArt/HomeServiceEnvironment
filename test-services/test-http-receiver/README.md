@@ -31,4 +31,8 @@ A TestEndpoint for POST requests.
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"valueA":"some custom value", "valueB": 42}' \
-  http://
+  http://localhost:8080/post
+```
+
+#### PUT
+A TestEndpoint for PUT r

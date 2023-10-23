@@ -35,4 +35,7 @@ curl --header "Content-Type: application/json" \
 ```
 
 #### PUT
-A TestEndpoint for PUT r
+A TestEndpoint for PUT requests.
+
+```
+curl --header "Content-Type: applicatio

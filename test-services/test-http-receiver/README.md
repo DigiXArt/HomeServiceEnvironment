@@ -40,4 +40,5 @@ A TestEndpoint for PUT requests.
 ```
 curl --header "Content-Type: application/json" \
   --request PUT \
-  --data '{"valueA
+  --data '{"valueA":"some custom value", "valueB": 42}' \
+  http://

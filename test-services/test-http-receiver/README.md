@@ -48,4 +48,5 @@ curl --header "Content-Type: application/json" \
 A TestEndpoint for DELETE requests.
 
 ```
-curl --request DELETE http://lo
+curl --request DELETE http://localhost:8080/delete
+```

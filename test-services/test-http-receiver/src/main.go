@@ -47,3 +47,49 @@ import (
 	"net/http"
 	"os"
 	"strings"
+
+	"github.com/gorilla/mux"
+)
+
+func logRequest(w http.ResponseWriter, r *http.Request) {
+	logMsg := make([]string, 0)
+
+	// Request
+	method := r.Method
+	logMsg = append(logMsg, fmt.Sprintf("%v: %v", r.Method, r.URL))
+	logMsg = append(logMsg, fmt.Sprintf("Remote Address: %v", r.RemoteAddr))
+	logMsg = append(logMsg, fmt.Sprintf("ContentLength: %v", r.ContentLength))
+
+	// Headers
+	logMsg = append(logMsg, "Headers:")
+	for name, values := range r.Header {
+		// Loop over all values for the name.
+		for _, value := range values {
+			logMsg = append(logMsg, fmt.Sprintf("\t%v: %v", name, value))
+		}
+	}
+
+	// Body
+	buf := new(bytes.Buffer)
+	_, err := buf.ReadFrom(r.Body)
+	if err == nil {
+		logMsg = append(logMsg, fmt.Sprintf("Request Body: %v", buf.String()))
+	}
+
+	log.Println(strings.Join(logMsg, "\n"))
+
+	// Respond
+	w.Header().Add("Content-Type", "application/json")
+
+	switch {
+	case method == "GET":
+		w.WriteHeader(http.StatusOK)
+		json.NewEncoder(w).Encode(strings.Join(logMsg, "\n"))
+	case method == "POST":
+		w.WriteHeader(http.StatusCreated)
+		json.NewEncoder(w).Encode(strings.Join(logMsg, "\n"))
+	case method == "PUT":
+		w.WriteHeader(http.StatusOK)
+		json.NewEncoder(w).Encode(strings.Join(logMsg, "\n"))
+	case method == "DELETE":
+		w.WriteHeader(http.StatusNoContent)

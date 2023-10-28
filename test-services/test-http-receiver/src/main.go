@@ -93,3 +93,19 @@ func logRequest(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(strings.Join(logMsg, "\n"))
 	case method == "DELETE":
 		w.WriteHeader(http.StatusNoContent)
+	}
+}
+
+//main is the main entrypoint of the service.
+func main() {
+	r := mux.NewRouter()
+
+	// Topic management
+	r.HandleFunc("/get", logRequest).Methods("GET")
+	r.HandleFunc("/post", logRequest).Methods("POST")
+	r.HandleFunc("/put", logRequest).Methods("PUT")
+	r.HandleFunc("/delete", logRequest).Methods("DELETE")
+
+	// Bind to a port and pass our router in
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", os.Getenv("PORT")), r))
+}

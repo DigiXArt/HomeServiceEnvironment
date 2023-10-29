@@ -1,2 +1,2 @@
 # HomeServiceEnvironment
-This project's aim is to build a service environment using a RaspberryPi and Docker. The documentation includes detailed information about how to set it up and how to run services on it. DigiXArt envisions it as a home-based Platform as a Service (PaaS) that can also serve as an educational collection of
+This project's aim is to build a service environment using a RaspberryPi and Docker. The documentation includes detailed information about how to set it up and how to run services on it. DigiXArt envisions it as a home-based Platform as a Service (PaaS) that can also serve as an educational collection of tutorial projects on Docker, Golang, Machine

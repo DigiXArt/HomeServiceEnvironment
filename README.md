@@ -5,4 +5,4 @@ This whole thing is still work in progress, so make sure to check back from time
 
 ## The Setup
 
-Deta
+Detailed guide on setting up your Raspberry Pi, con

@@ -5,4 +5,6 @@ This whole thing is still work in progress, so make sure to check back from time
 
 ## The Setup
 
-Detailed guide on setting up your Raspberry Pi, configuring the network, setting up Docker, adding external storage, installing Git, pulling services to server, and running a service are provided. Also covered is running Visual Code in Docker fo
+Detailed guide on setting up your Raspberry Pi, configuring the network, setting up Docker, adding external storage, installing Git, pulling services to server, and running a service are provided. Also covered is running Visual Code in Docker for coding on iPad.
+
+Please follow the instructio
